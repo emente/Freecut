@@ -32,6 +32,28 @@ PROVO CRAFT.
 
 If you still want to proceed:
 
+Attach an AVR programming cable to cartridge connector on the main board (J5):
+
+ J5   |  AVR
+------+-----
+  1   |  PDO
+  3   |  SCK
+  4   |  PDI
+  5   |  RESET
+  6   |  GND
+
+Top view of connector:
+
+       J5
++----        ---+
+| 9  7  5  3  1 |
+|10  8  6  4  2 |
++---------------+
+
+===edge of board======
+
+Alternate, if J5 did not work:
+
 Attach an AVR programming cable to atmega128:
 
  PIN |  ISP   ||  AVR   | PIN 
@@ -65,13 +87,30 @@ Top view of Atmega128:
 
 And upload the freecut.hex file.
 
-After reprogramming, the machine should beep, and display "Freecut v0.1g" on the LCD display.
-Use keypad to load/unload paper (bottom right is unload, one to the left is load)
-
-Use the USB cable to communicate (speed and pressure dial work, the rest plus keypad not).
-
+After reprogramming, the machine should beep. Use keypad to load/unload paper.
+Use the USB cable to communicate (speed and pressure dial work).
 USB uses 115200 baud, 8N1.
 
+Keypad key functions:
+
+up/down/left/right: move paper or head
+cut: computer control only (default)
+stop: manual control only 
+
+[7|_|_|_|_|_|_|_|_|_|_|_|5|6] 
+[8|_|_|_|_|_|_|_|_|_|_|_|_|_]     ()
+[_|_|_|_|_|_|_|_|_|_|_|_|_|_]   ()
+[_|_|_|_|_|_|_|_|_|_|_|_|4|3]
+[_|_|_|_|_|_|_|_|_|_|_|_|1|2]
+
+1=load mat
+2=unload mat
+3=set as 0/0 coordinates
+4=center x
+5=move in millimeters
+6=move in centimeters
+7=led: manual only
+8=led: usb only
 
 Following gcodes are available:
 
@@ -84,13 +123,22 @@ G91
 G90
 	absolute positioning (default)
 
-G0 Xx Yx Zx Fy
-G1 Xx Yx Zx Fy
-	move axis to x/set feedrate to y
+G92 [Xx Yy]
+	set current position (0/0 if X/Y ommitted)
+	
+G0 Xx Yx Zx
+G1 Xx Yx Zx
+	move axis (feedrate is ignored)
 
 G28
 	home all axis
 
+M106
+	load paper
+
+M107
+	unload paper
+	
 M300 Sx
 	0=pen down 255=pen up (same as Z, for mb unicorn)
 
