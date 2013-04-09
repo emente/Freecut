@@ -68,9 +68,7 @@ int main( void )
     timer_init( );
     stepper_init( );
     sei( );
-    lcd_init( );
-    keypad_init( );
-    flash_init( );
+    //keypad_init( );
     dial_init( );
 
     wdt_reset( );
@@ -82,21 +80,23 @@ int main( void )
 
     // connect stdout to USB port
     stdout = &usb; 
-    printf( "Freecut v" VERSION "\n\n" );
-    fprintf( &lcd, "Freecut v" VERSION );
+    printf( "start\n" );
     while( 1 )
     {
         cli_poll( );
-	wdt_reset( );
-	if( flag_25Hz )
-	{
-	    flag_25Hz = 0;
-	    dial_poll( );
-	    poll_keypad( );
-	}
-	if( flag_Hz )
-	{
-	    flag_Hz = 0;
-	}
+		wdt_reset( );
+		if( flag_25Hz )
+		{
+			flag_25Hz = 0;
+			//poll_keypad( );
+		}
+		if( flag_Hz )
+		{
+			flag_Hz = 0;
+
+			dial_poll( );
+			stepper_speed( dial_get_speed() );
+			stepper_pressure( dial_get_pressure() );
+		}
     }
 }

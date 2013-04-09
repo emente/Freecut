@@ -32,25 +32,36 @@ PROVO CRAFT.
 
 If you still want to proceed:
 
-Attach an AVR programming cable to cartridge connector on the main board (J5):
+Attach an AVR programming cable to atmega128:
 
- J5   |  AVR   |  ISP    | PIN
-------+--------+---------+------  
-  1   |  PDO   |  MOSI   |  1
-  3   |  SCK   |  SCK    |  7
-  4   |  PDI   |  MISO   |  9
-  5   |  RESET |  RESET  |  5
-  6   |  GND   |  GND    |  8+10
+ PIN |  ISP   ||  AVR   | PIN 
+-----+--------++--------+------  
+  9  |  MISO  ||  PDO   |  3
+  7  |  SCK   ||  SCK   |  11
+  1  |  MOSI  ||  PDI   |  2
+  5  |  RESET ||  RESET |  20
+  10 |  GND   ||  GND   |  22/53
 
-Top view of connector: 
 
-     J5 / ISP
+Top view of male ISP connector: 
+
+       ISP
 +----        ---+
 | 9  7  5  3  1 |
 |10  8  6  4  2 |
 +---------------+
 
-===edge of board======
+
+Top view of Atmega128:
+
+     64     49
+    +--------+
+  1 | o      | 48
+    |  M128  |
+ 16 |        | 33
+    +--------+
+     17     32
+	 
 
 And upload the freecut.hex file.
 
