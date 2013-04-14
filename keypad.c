@@ -93,6 +93,10 @@ uint8_t keypad_state[MAX_COLS];	// current state
 uint8_t keypad_prev[MAX_COLS];  // previous state
 uint16_t leds;
 
+uint16_t keypad_get_leds(void) {
+    return leds;
+}
+
 /*
  * keypad_write_cols: write all 16 column bits in 'val' to shift register.
  */

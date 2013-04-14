@@ -10,13 +10,14 @@
 #include "stepper.h"
 #include "string.h"
 #include "gcode.h"
+#include "keypad.h"
 
 
 
 #define MAX_CMD_SIZE 96
 #define BUFSIZE 4
-#define DPI_X   401
-#define DPI_Y   401
+#define DPI_X   401/2.54/10
+#define DPI_Y   401/2.54/10
 
 
 char cmdbuffer[BUFSIZE][MAX_CMD_SIZE];
@@ -29,17 +30,15 @@ bool comment_mode = false;
 char *strchr_pointer; // just a pointer to find chars in the cmd string like X, Y, Z, E, etc
 long gcode_N, gcode_LastN;
 
-
 bool hpgl_mode = false;
 
-
-bool relative_mode = true;
-int xpos=0;
-int ypos=0;
-int xoff=0;
-int yoff=0;
+bool relative_mode = false;
 bool penup = true;
 bool null_mode = false;
+double xpos=0;
+double ypos=0;
+double xoff=0;
+double yoff=0;
 
 void gcode_loop(void) {
     if (buflen < (BUFSIZE - 1))
@@ -185,7 +184,7 @@ void ClearToSend(void) {
     printf("ok\n");
 }
 
-float code_value(void) {
+double code_value(void) {
     return (strtod(&cmdbuffer[bufindr][strchr_pointer - cmdbuffer[bufindr] + 1], NULL));
 }
 
@@ -203,34 +202,46 @@ bool code_seen(char code) {
     return (strchr_pointer != NULL); //Return True if a character was found
 }
 
-void movePen(int x, int y) {
+void blink(void) {
+    keypad_set_leds(keypad_get_leds() ^ 1);
+}
+
+
+void gcode_move(double x, double y, bool down, bool rel) {
     if (null_mode) return;
-    
+
+    if (rel) {
+        xpos+=x;
+        ypos+=y;
+        x=xpos;
+        y=ypos;
+    } else {
+        xpos=x;
+        ypos=y;
+    }
+    printf("move to %f,%f\n",x,y);
+
     x+=xoff;
     y+=yoff;
-
-    if (x<0) x=0;
-    if (y<0) y=0;
     
     x=x*DPI_X;
     y=y*DPI_Y;
-    if (penup) {
+
+    blink();
+    if (!down) {
         stepper_move( x, y );
     } else {
         stepper_draw( x, y );
     }
 }
 
-void moveHead(int x, int y) {
-    x+=xoff;
-    y+=yoff;
-    x*=DPI_X;
-    y*=DPI_Y;
-    stepper_move(x,y);    
-}
-
 void nullMode(bool b) {
-        null_mode = b;    
+        null_mode = b;
+        if (b) {
+            keypad_set_leds(keypad_get_leds() || 2);
+        } else {
+            keypad_set_leds(keypad_get_leds() && (0xffff-2));
+        }
 }
 
 void FlushSerialRequestResend() {
@@ -252,25 +263,25 @@ void process_commands() {
                 }
                 
                 if (relative_mode) {
-                    int newx = xpos;
-                    int newy = ypos;
-                    if (code_seen('X')) {
-                        newx += code_value();
-                    }
-                    if (code_seen('Y')) {
-                        newy += code_value();
-                    }
-                    movePen(newx,newy);
-                } else {
-                    int newx = xpos;
-                    int newy = ypos;
+                    double newx = 0;
+                    double newy = 0;
                     if (code_seen('X')) {
                         newx = code_value();
                     }
                     if (code_seen('Y')) {
                         newy = code_value();
                     }
-                    movePen(newx,newy);
+                    gcode_move(newx,newy,!penup,true);
+                } else {
+                    double newx = xpos;
+                    double newy = ypos;
+                    if (code_seen('X')) {
+                        newx = code_value();
+                    }
+                    if (code_seen('Y')) {
+                        newy = code_value();
+                    }
+                    gcode_move(newx,newy,!penup,false);
                 }
                 break;
                 
@@ -299,19 +310,30 @@ void process_commands() {
                 relative_mode = true;
                 break;
 
-            case 92: // G92 home
+            case 92: // G92 set coords
                 if (code_seen('X')) {
-                    xoff = code_value();
+                    xoff = -xpos + code_value();
+                    xpos=0;
+                } else {
+                    xoff = -xpos;
+                    xpos=0;
                 }
                 if (code_seen('Y')) {
-                    yoff = code_value();
-                }                
+                    yoff = -ypos + code_value();
+                    ypos=0;
+                } else {
+                    yoff= -ypos;
+                    ypos=0;
+                }
                 break;
         }
     }
     else
     if (code_seen('M')) {
         switch ((int) code_value()) {
+            case 80://power on
+                break;
+
             case 106://load paper
                 stepper_load_paper();
                 break;
@@ -320,9 +342,9 @@ void process_commands() {
                 stepper_unload_paper();
                 break;
 
-            case 300://S0=down S255=up
+            case 300://S30=down S50=up S255=off
                 if (code_seen('S')) {
-                    penup = code_value() > 0;
+                    penup = code_value() > 40;
                 }
                 break;
         }

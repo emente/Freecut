@@ -23,5 +23,6 @@ int keypad_scan( void );
 void keypad_init( void );
 void keypad_set_leds( uint16_t mask );
 char keypad_stop_pressed( void );
+uint16_t keypad_get_leds(void);
 
 #endif

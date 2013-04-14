@@ -9,7 +9,7 @@ mostly lifted from https://github.com/ErikZalm/Marlin
 
 void gcode_loop(void);
 
-void moveHead(int x, int y);
+void gcode_move(double x, double y, bool down, bool rel);
 void nullMode(bool b);
 
 void get_command(void);

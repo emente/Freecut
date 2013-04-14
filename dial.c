@@ -64,7 +64,7 @@ void dial_poll( void )
 {
     ADCSR |= (1 << ADIF);
     dial_adc[channel] = ADCH;
-    if( ++channel == MAX_DIALS )
+    if( ++channel >=3  )
         channel = 0;
     ADMUX = (1 << ADLAR) | (1 << REFS0) | channel;
     ADCSRA |= (1 << ADSC);

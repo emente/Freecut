@@ -47,11 +47,19 @@ static FILE usb = FDEV_SETUP_STREAM(usb_putchar, usb_getchar, _FDEV_SETUP_RW);
 #define LOAD_PAPER	0x4c
 #define UNLOAD_PAPER	0x4d
 
-#define B_CUT   0x2e
-#define B_UP    0x3e
-#define B_DOWN  0x4e
-#define B_LEFT  0x1e
-#define B_RIGHT 0x0e
+#define B_CUT   46
+#define B_UP    62
+#define B_DOWN  78
+#define B_LEFT  30
+#define B_RIGHT 14
+#define B_MM    12
+#define B_CM    13
+#define B_CENTER    60
+#define B_ZERO      61
+
+int speed=0,lastSpeed=0;
+int press=0,lastPress=0;
+int step=10;
 
 
 void poll_keypad(void) {
@@ -61,19 +69,23 @@ void poll_keypad(void) {
     }
     
     int key = keypad_scan();
+    if (key == -1) {
+        return;
+    }
+    //printf("ok key %d pressed\n",key);
 
     switch (key) {
         case B_UP:
-            moveHead(0,-10);
+            gcode_move(step,0,false,true);
             break;
         case B_DOWN:
-            moveHead(0,10);
+            gcode_move(-step,0,false,true);
             break;
         case B_LEFT:
-            moveHead(-10,0);
+            gcode_move(0,step,false,true);
             break;
         case B_RIGHT:
-            moveHead(10,0);
+            gcode_move(0,-step,false,true);
             break;
         case B_CUT:
             nullMode(false);    
@@ -83,6 +95,18 @@ void poll_keypad(void) {
             break;
         case UNLOAD_PAPER:
             stepper_unload_paper();
+            break;
+        case B_MM:
+            step=1;
+            break;
+        case B_CM:
+            step=10;
+            break;
+        case B_CENTER:
+            
+            break;
+        case B_ZERO:
+
             break;
 
         default:
@@ -109,7 +133,6 @@ int main(void) {
 
     // connect stdout to USB port
     stdout = &usb;
-    printf("start\n");
     while (1) {
         wdt_reset();
         
@@ -118,14 +141,29 @@ int main(void) {
         if (flag_25Hz) {
             flag_25Hz = 0;
             poll_keypad( );
+            dial_poll();
+
         }
 
         if (flag_Hz) {
             flag_Hz = 0;
 
-            dial_poll();
-            stepper_speed(dial_get_speed());
-            stepper_pressure(dial_get_pressure());
+            printf("start\n");
+
+
+            speed = dial_get_speed();
+            press = dial_get_pressure();
+            if (speed != lastSpeed) {
+                stepper_speed(speed);
+                lastSpeed = speed;
+                printf("speed %i\n",speed);
+            }
+            if (press != lastPress) {
+                stepper_pressure(press);
+                lastPress = press;
+                printf("pressure %i\n",speed);
+            }
+
         }
     }
 }
