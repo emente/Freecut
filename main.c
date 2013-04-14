@@ -43,24 +43,50 @@
 
 static FILE usb = FDEV_SETUP_STREAM(usb_putchar, usb_getchar, _FDEV_SETUP_RW);
 
+
 #define LOAD_PAPER	0x4c
 #define UNLOAD_PAPER	0x4d
 
+#define B_CUT   0x2e
+#define B_UP    0x3e
+#define B_DOWN  0x4e
+#define B_LEFT  0x1e
+#define B_RIGHT 0x0e
+
+
 void poll_keypad(void) {
+    if (keypad_stop_pressed()) {
+        nullMode(true);
+        return;
+    }
+    
     int key = keypad_scan();
 
     switch (key) {
+        case B_UP:
+            moveHead(0,-10);
+            break;
+        case B_DOWN:
+            moveHead(0,10);
+            break;
+        case B_LEFT:
+            moveHead(-10,0);
+            break;
+        case B_RIGHT:
+            moveHead(10,0);
+            break;
+        case B_CUT:
+            nullMode(false);    
+            break;
         case LOAD_PAPER:
             stepper_load_paper();
             break;
-
         case UNLOAD_PAPER:
             stepper_unload_paper();
             break;
 
         default:
-            if (key >= 0)
-                printf("# unknown key %02x\n", key);
+            break;
     }
 }
 
@@ -71,7 +97,7 @@ int main(void) {
     timer_init();
     stepper_init();
     sei();
-    //keypad_init( );
+    keypad_init( );
     dial_init();
 
     wdt_reset();
@@ -91,7 +117,7 @@ int main(void) {
 
         if (flag_25Hz) {
             flag_25Hz = 0;
-            //poll_keypad( );
+            poll_keypad( );
         }
 
         if (flag_Hz) {

@@ -9,6 +9,9 @@ mostly lifted from https://github.com/ErikZalm/Marlin
 
 void gcode_loop(void);
 
+void moveHead(int x, int y);
+void nullMode(bool b);
+
 void get_command(void);
 void process_commands(void);
 

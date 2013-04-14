@@ -4,398 +4,119 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-AA	hpgl.c	189;"	d	file:
-AF	hpgl.c	190;"	d	file:
-AH	hpgl.c	191;"	d	file:
-AR	hpgl.c	192;"	d	file:
-ASCII_set_center	chardraw.c	/^ASCII_set_center (int c)$/;"	f	file:
-ASCII_to_char	chardraw.c	/^ASCII_to_char (int c)$/;"	f	file:
-AT	hpgl.c	193;"	d	file:
 AT_CAR	flash.c	53;"	d	file:
 AT_STATUS	flash.c	52;"	d	file:
 BACKLIGHT	lcd.c	55;"	d	file:
-BEL	hp2xx.h	125;"	d
-BL	hpgl.c	194;"	d	file:
-BP	hpgl.c	195;"	d	file:
-BRESENHAM_EOL	bresnham.h	10;"	d
-BRESENHAM_ERR	bresnham.h	11;"	d
 BUFLEN	cli.c	40;"	d	file:
 BUFSIZE	gcode.c	17;"	d	file:
-BUF_to_RAS	hp2xx.c	/^int	BUF_to_RAS (const GEN_PAR *pg, const OUT_PAR *po)$/;"	f
-BYTE	pendef.h	/^typedef unsigned char BYTE;$/;"	t
-Byte	hp2xx.h	/^typedef unsigned char	Byte;$/;"	t
-C1	hpgl.c	/^HPGL_Pt C1 =$/;"	v
-C2	hpgl.c	/^HPGL_Pt C2 =$/;"	v
-CA	hpgl.c	196;"	d	file:
-CI	hpgl.c	197;"	d	file:
-CLIP_ABOVE	clip.c	22;"	d	file:
-CLIP_BELOW	clip.c	21;"	d	file:
-CLIP_DRAW	clip.h	15;"	d
-CLIP_INSIDE	clip.c	19;"	d	file:
-CLIP_LEFT	clip.c	23;"	d	file:
-CLIP_NODRAW	clip.h	16;"	d
-CLIP_RIGHT	clip.c	20;"	d	file:
+B_CUT	main.c	50;"	d	file:
+B_DOWN	main.c	52;"	d	file:
+B_LEFT	main.c	53;"	d	file:
+B_RIGHT	main.c	54;"	d	file:
+B_UP	main.c	51;"	d	file:
 CLK	keypad.c	78;"	d	file:
-CMD_EOF	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
 CMD_QUEUE_SIZE	stepper.c	162;"	d	file:
-CO	hpgl.c	198;"	d	file:
-COPYNOTE	hp2xx.h	108;"	d
-COPYNOTE	hp2xx.h	116;"	d
-CP	hpgl.c	199;"	d	file:
-CR	hp2xx.h	122;"	d
-CR_point	chardraw.h	/^		CR_point,	\/* Returns point after a <CR>	*\/$/;"	m	struct:__anon2
 CS	flash.c	41;"	d	file:
-CS	hpgl.c	200;"	d	file:
-C_BAD	cli.c	/^    C_BAD,$/;"	e	enum:__anon5	file:
-C_CURVE	cli.c	/^    C_CURVE,$/;"	e	enum:__anon5	file:
-C_DRAW	cli.c	/^    C_DRAW,$/;"	e	enum:__anon5	file:
-C_EOL	cli.c	/^    C_EOL = 0, $/;"	e	enum:__anon5	file:
-C_FLASH	cli.c	/^    C_FLASH,$/;"	e	enum:__anon5	file:
-C_MOVE	cli.c	/^    C_MOVE,$/;"	e	enum:__anon5	file:
-C_NUM	cli.c	/^    C_NUM,$/;"	e	enum:__anon5	file:
-C_PRESS	cli.c	/^    C_PRESS,$/;"	e	enum:__anon5	file:
-C_RESET	cli.c	/^    C_RESET,$/;"	e	enum:__anon5	file:
-C_SPEED	cli.c	/^    C_SPEED,$/;"	e	enum:__anon5	file:
-C_VERSION	cli.c	/^    C_VERSION,$/;"	e	enum:__anon5	file:
+C_BAD	cli.c	/^    C_BAD,$/;"	e	enum:__anon1	file:
+C_CURVE	cli.c	/^    C_CURVE,$/;"	e	enum:__anon1	file:
+C_DRAW	cli.c	/^    C_DRAW,$/;"	e	enum:__anon1	file:
+C_EOL	cli.c	/^    C_EOL = 0, $/;"	e	enum:__anon1	file:
+C_FLASH	cli.c	/^    C_FLASH,$/;"	e	enum:__anon1	file:
+C_MOVE	cli.c	/^    C_MOVE,$/;"	e	enum:__anon1	file:
+C_NUM	cli.c	/^    C_NUM,$/;"	e	enum:__anon1	file:
+C_PRESS	cli.c	/^    C_PRESS,$/;"	e	enum:__anon1	file:
+C_RESET	cli.c	/^    C_RESET,$/;"	e	enum:__anon1	file:
+C_SPEED	cli.c	/^    C_SPEED,$/;"	e	enum:__anon1	file:
+C_VERSION	cli.c	/^    C_VERSION,$/;"	e	enum:__anon1	file:
 ClearToSend	gcode.c	/^void ClearToSend(void) {$/;"	f
-ClipAreaCode	clip.c	/^static int ClipAreaCode ($/;"	f	file:
-ClipFullyInside	clip.c	26;"	d	file:
-ClipSurelyOutside	clip.c	25;"	d	file:
-ClipWithBorder	clip.c	/^static int ClipWithBorder($/;"	f	file:
-CurrentLinePatLen	lindef.c	/^double     CurrentLinePatLen;$/;"	v
-CurrentLinePattern	lindef.c	/^signed int CurrentLinePattern;$/;"	v
-CurrentLineType	hpgl.c	/^LineType CurrentLineType = LT_solid;$/;"	v
 DATA	keypad.c	77;"	d	file:
 DATA	lcd.c	59;"	d	file:
 DEBUG	stepper.c	56;"	d	file:
-DEFAULT_PEN_NO	hp2xx.h	287;"	d
-DEF_PC	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
-DEF_PW	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
-DF	hpgl.c	201;"	d	file:
-DI	hpgl.c	202;"	d	file:
 DIALS_H	dial.h	24;"	d
-DIAL_PRESSURE	dial.h	/^    DIAL_PRESSURE,$/;"	e	enum:__anon6
-DIAL_SIZE	dial.h	/^    DIAL_SIZE,$/;"	e	enum:__anon6
-DIAL_SPEED	dial.h	/^    DIAL_SPEED,$/;"	e	enum:__anon6
-DR	hpgl.c	203;"	d	file:
+DIAL_PRESSURE	dial.h	/^    DIAL_PRESSURE,$/;"	e	enum:__anon2
+DIAL_SIZE	dial.h	/^    DIAL_SIZE,$/;"	e	enum:__anon2
+DIAL_SPEED	dial.h	/^    DIAL_SPEED,$/;"	e	enum:__anon2
+DPI_X	gcode.c	18;"	d	file:
+DPI_Y	gcode.c	19;"	d	file:
 DRAW	stepper.c	/^    DRAW,			\/\/ move with pen down$/;"	e	enum:type	file:
-DRAW_TO	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
-DT	hpgl.c	204;"	d	file:
-DV	hpgl.c	205;"	d	file:
-DevPt	bresnham.h	/^} DevPt;$/;"	t	typeref:struct:__anon1
-Diag_P1_P2	hpgl.c	/^static double Diag_P1_P2,pat_pos;$/;"	v	file:
-DtClipLine	clip.c	/^short DtClipLine($/;"	f
 E	lcd.c	58;"	d	file:
-EA	hpgl.c	206;"	d	file:
-EC	hpgl.c	207;"	d	file:
-EOF	hp2xx.h	83;"	d
-EP	hpgl.c	208;"	d	file:
-ER	hpgl.c	209;"	d	file:
-ERROR	hp2xx.h	106;"	d
-ERROR	hp2xx.h	114;"	d
-ES	hpgl.c	210;"	d	file:
-ESC	hp2xx.h	121;"	d
-ETX	hpgl.c	89;"	d	file:
-EW	hpgl.c	211;"	d	file:
 F0	stepper.c	64;"	d	file:
 F1	stepper.c	66;"	d	file:
 F2	stepper.c	68;"	d	file:
 F3	stepper.c	70;"	d	file:
-FALSE	hp2xx.h	96;"	d
-FF	hp2xx.h	123;"	d
-FLAGSTATE	hp2xx.h	289;"	d
 FLASH_H	flash.h	25;"	d
-FONT	chardraw.h	/^  FONT, *Font;$/;"	t	typeref:struct:__anon4
-FOPEN	hp2xx.h	110;"	d
-FOPEN	hp2xx.h	117;"	d
-FP	hpgl.c	212;"	d	file:
-FT	hpgl.c	213;"	d	file:
 FlushSerialRequestResend	gcode.c	/^void FlushSerialRequestResend() {$/;"	f
-Font	chardraw.h	/^  FONT, *Font;$/;"	t	typeref:struct:__anon4
 GCODE_H	gcode.h	8;"	d
-GEN_PAR	hp2xx.h	/^}	GEN_PAR;$/;"	t	typeref:struct:__anon15
 H0	stepper.c	63;"	d	file:
 H1	stepper.c	65;"	d	file:
 H2	stepper.c	67;"	d	file:
 H3	stepper.c	69;"	d	file:
-HEIGHT_FAC	chardraw.c	322;"	d	file:
 HOME	stepper.c	72;"	d	file:
 HOME1	stepper.c	/^    HOME1,			\/\/ homing until switch is pushed$/;"	e	enum:state	file:
 HOME2	stepper.c	/^    HOME2,			\/\/ reversing until switch is released$/;"	e	enum:state	file:
-HPGL_Pt	hp2xx.h	/^} HPGL_Pt;$/;"	t	typeref:struct:__anon10
-HPGL_Pt_from_tmpfile	hpgl.c	/^void HPGL_Pt_from_tmpfile (HPGL_Pt * pf) {$/;"	f
-HPGL_Pt_to_tmpfile	hpgl.c	/^HPGL_Pt_to_tmpfile (const HPGL_Pt * pf)$/;"	f	file:
-HPGL_to_TMP	hp2xx.c	/^int HPGL_to_TMP (GEN_PAR *pg, IN_PAR *pi) {$/;"	f
-HP_pos	hpgl.c	/^HPGL_Pt HP_pos =$/;"	v
-HP_to_xdots	hp2xx.h	/^   double HP_to_xdots;		\/* (internally needed)		*\/$/;"	m	struct:__anon14
-HP_to_ydots	hp2xx.h	/^   double HP_to_ydots;		\/* (internally needed)		*\/$/;"	m	struct:__anon14
-HYPOT	hpgl.c	101;"	d	file:
-HYPOT	hpgl.c	99;"	d	file:
-IN	hpgl.c	214;"	d	file:
-INTELL	hp2xx.h	303;"	d
-INTELL	hp2xx.h	308;"	d
-INTELS	hp2xx.h	301;"	d
-INTELS	hp2xx.h	306;"	d
-IN_PAR	hp2xx.h	/^}	IN_PAR;$/;"	t	typeref:struct:__anon13
-IP	hpgl.c	215;"	d	file:
-IW	hpgl.c	216;"	d	file:
-JOFF	chardraw.h	13;"	d
 KEYPAD_H	keypad.h	20;"	d
-LB	hpgl.c	217;"	d	file:
-LB_Mode	chardraw.h	/^	LB_Mode;		\/* LB and PB work differently !	*\/$/;"	t	typeref:enum:__anon3
-LB_buffered	chardraw.h	/^typedef	enum {LB_direct, LB_buffered, LB_buffered_in_use}$/;"	e	enum:__anon3
-LB_buffered_in_use	chardraw.h	/^typedef	enum {LB_direct, LB_buffered, LB_buffered_in_use}$/;"	e	enum:__anon3
-LB_direct	chardraw.h	/^typedef	enum {LB_direct, LB_buffered, LB_buffered_in_use}$/;"	e	enum:__anon3
 LCD_H	lcd.h	25;"	d
 LEDS	keypad.c	76;"	d	file:
-LF	hp2xx.h	124;"	d
 LINE	stepper.c	/^    LINE			\/\/ draw straight line$/;"	e	enum:state	file:
-LINESTYLE	lindef.h	/^typedef double LINESTYLE[LT_PATTERNS][LT_ELEMENTS+1];$/;"	t
-LO	hpgl.c	218;"	d	file:
-LOAD_PAPER	main.c	46;"	d	file:
-LPattern_Generator	hpgl.c	/^LPattern_Generator (HPGL_Pt * pa,$/;"	f	file:
-LT	hpgl.c	219;"	d	file:
-LT_ELEMENTS	lindef.h	17;"	d
-LT_MAX	lindef.h	14;"	d
-LT_MIN	lindef.h	12;"	d
-LT_PATTERNS	lindef.h	16;"	d
-LT_ZERO	lindef.h	13;"	d
-LT_adaptive	lindef.h	/^typedef enum { LT_solid, LT_adaptive, LT_plot_at, LT_fixed } LineType;   $/;"	e	enum:__anon17
-LT_fixed	lindef.h	/^typedef enum { LT_solid, LT_adaptive, LT_plot_at, LT_fixed } LineType;   $/;"	e	enum:__anon17
-LT_plot_at	lindef.h	/^typedef enum { LT_solid, LT_adaptive, LT_plot_at, LT_fixed } LineType;   $/;"	e	enum:__anon17
-LT_solid	lindef.h	/^typedef enum { LT_solid, LT_adaptive, LT_plot_at, LT_fixed } LineType;   $/;"	e	enum:__anon17
-LineType	lindef.h	/^typedef enum { LT_solid, LT_adaptive, LT_plot_at, LT_fixed } LineType;   $/;"	t	typeref:enum:__anon17
-Line_Generator	hpgl.c	/^Line_Generator (HPGL_Pt * pa, const HPGL_Pt * pb, int mv_flag)$/;"	f	file:
-M	hpgl.c	/^HPGL_Pt M;			\/* maximum coordinates set by PS instruction *\/$/;"	v
+LOAD_PAPER	main.c	47;"	d	file:
 MAT_EDGE	stepper.c	52;"	d	file:
-MAX	hp2xx.h	91;"	d
-MAXPOLY	hp2xx.h	129;"	d
 MAX_ARGS	cli.c	41;"	d	file:
 MAX_CMD_SIZE	gcode.c	16;"	d	file:
 MAX_COLS	keypad.c	81;"	d	file:
-MAX_DIALS	dial.h	/^    MAX_DIALS$/;"	e	enum:__anon6
+MAX_DIALS	dial.h	/^    MAX_DIALS$/;"	e	enum:__anon2
 MAX_KEYWORDS	cli.c	91;"	d	file:
-MAX_LB_LEN	hp2xx.h	127;"	d
 MAX_ROWS	keypad.c	82;"	d	file:
 MAX_X	stepper.c	54;"	d	file:
 MAX_Y	stepper.c	53;"	d	file:
-MG	hpgl.c	220;"	d	file:
-MIN	hp2xx.h	87;"	d
 MISO	flash.c	39;"	d	file:
-MORORL	hp2xx.h	304;"	d
-MORORL	hp2xx.h	309;"	d
 MOSI	flash.c	42;"	d	file:
-MOTORS	hp2xx.h	302;"	d
-MOTORS	hp2xx.h	307;"	d
 MOVE	stepper.c	/^    MOVE,			\/\/ move with pen up $/;"	e	enum:type	file:
-MOVE_TO	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
-M_PI	hp2xx.h	79;"	d
-ModeList	hp2xx.c	/^mode_list  ModeList[] =$/;"	v
-NOERROR	hp2xx.h	107;"	d
-NOERROR	hp2xx.h	115;"	d
-NOP	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
-NP	hpgl.c	221;"	d	file:
-NR	hpgl.c	222;"	d	file:
-NUMPENS	pendef.h	6;"	d
-OP	hpgl.c	223;"	d	file:
-OUT_PAR	hp2xx.h	/^}	OUT_PAR;$/;"	t	typeref:struct:__anon14
-P1	hpgl.c	/^HPGL_Pt P1 =$/;"	v
-P1X_default	hpgl.c	91;"	d	file:
-P1Y_default	hpgl.c	92;"	d	file:
-P2	hpgl.c	/^HPGL_Pt P2 =$/;"	v
-P2X_default	hpgl.c	93;"	d	file:
-P2Y_default	hpgl.c	94;"	d	file:
-PA	hpgl.c	224;"	d	file:
-PB	hpgl.c	225;"	d	file:
-PC	hpgl.c	226;"	d	file:
-PD	hpgl.c	227;"	d	file:
-PE	hpgl.c	228;"	d	file:
-PEN	pendef.h	/^} PEN;$/;"	t	typeref:struct:__anon18
 PEN	stepper.c	73;"	d	file:
-PEN_C	pendef.h	/^typedef unsigned short int PEN_C;$/;"	t
-PEN_N	pendef.h	/^typedef unsigned short int PEN_N;$/;"	t
-PEN_W	pendef.h	/^typedef unsigned short int PEN_W;$/;"	t
-PE_flags	hp2xx.h	/^} PE_flags;$/;"	t	typeref:struct:__anon16
-PG	hpgl.c	229;"	d	file:
-PJLBS	hpgl.c	1206;"	d	file:
-PLOT_AT	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
-PM	hpgl.c	230;"	d	file:
-PR	hpgl.c	231;"	d	file:
 PRESSURE	stepper.c	/^    PRESSURE,			\/\/ set pressure $/;"	e	enum:type	file:
 PROGMEM	cli.c	/^} keyword_list[] PROGMEM = $/;"	v	typeref:struct:keyword	file:
-PS	hpgl.c	232;"	d	file:
-PT	hpgl.c	233;"	d	file:
-PU	hpgl.c	234;"	d	file:
-PURE_C	hp2xx.h	55;"	d
-PW	hpgl.c	235;"	d	file:
-Pen_Color_to_tmpfile	hpgl.c	/^static void Pen_Color_to_tmpfile (int pen,int red,int green, int blue) {$/;"	f	file:
-Pen_Width_to_tmpfile	hpgl.c	/^static void Pen_Width_to_tmpfile (int pen,int width) {$/;"	f	file:
-Pen_action_to_tmpfile	hpgl.c	/^Pen_action_to_tmpfile (PlotCmd cmd, const HPGL_Pt * p, int scaled)$/;"	f
-PicBuf	hp2xx.h	/^} PicBuf;$/;"	t	typeref:struct:__anon9
-PlotCmd	hp2xx.h	/^} PlotCmd;$/;"	t	typeref:enum:__anon11
-PlotCmd_from_tmpfile	hpgl.c	/^PlotCmd PlotCmd_from_tmpfile(void) {$/;"	f
-PlotCmd_to_tmpfile	hpgl.c	/^PlotCmd_to_tmpfile (PlotCmd cmd) {$/;"	f	file:
-Plotter_to_User_coord	hpgl.c	/^Plotter_to_User_coord (const HPGL_Pt * p_plot, HPGL_Pt * p_usr)$/;"	f	file:
-Q	hpgl.c	/^HPGL_Pt Q;			\/* Delta-P\/Delta-S: Initialized with first SC   *\/$/;"	v
-RA	hpgl.c	236;"	d	file:
 READY	stepper.c	/^    READY,			\/\/ motor off, pen up$/;"	e	enum:state	file:
-READ_BIN	hp2xx.h	293;"	d
-READ_BIN	hp2xx.h	296;"	d
-RO	hpgl.c	237;"	d	file:
 ROWS	keypad.c	79;"	d	file:
-RR	hpgl.c	238;"	d	file:
 RS	lcd.c	56;"	d	file:
-RT	hpgl.c	239;"	d	file:
 RW	lcd.c	57;"	d	file:
-S1	hpgl.c	/^HPGL_Pt S1 =$/;"	v
-S2	hpgl.c	/^HPGL_Pt S2 =$/;"	v
-SA	hpgl.c	240;"	d	file:
-SC	hpgl.c	241;"	d	file:
-SCHAR	lindef.h	/^typedef signed char SCHAR;    $/;"	t
 SCK	flash.c	40;"	d	file:
-SET_PEN	hp2xx.h	/^	NOP, MOVE_TO, DRAW_TO, PLOT_AT, SET_PEN, DEF_PW, DEF_PC, CMD_EOF$/;"	e	enum:__anon11
-SI	hpgl.c	242;"	d	file:
 SIGNAL	timer.c	/^SIGNAL( SIG_OUTPUT_COMPARE0 ) $/;"	f
 SIGNAL	timer.c	/^SIGNAL( SIG_OUTPUT_COMPARE2 ) $/;"	f
 SIGNAL	usb.c	/^SIGNAL( SIG_UART1_DATA ) $/;"	f
 SIGNAL	usb.c	/^SIGNAL( SIG_UART1_RECV )$/;"	f
-SL	hpgl.c	243;"	d	file:
-SM	hpgl.c	244;"	d	file:
-SP	hpgl.c	245;"	d	file:
 SPEED	stepper.c	/^    SPEED,			\/\/ set speed$/;"	e	enum:type	file:
-SR	hpgl.c	246;"	d	file:
-SS	hpgl.c	247;"	d	file:
 STEPPER_H	stepper.h	25;"	d
 STOP	keypad.c	75;"	d	file:
-Send_Copyright	hp2xx.c	/^void	Send_Copyright(void)$/;"	f
-Send_version	hp2xx.c	/^void	Send_version(void)$/;"	f
-StrTerm	hpgl.c	/^static char StrTerm = ETX;	\/* String terminator char       *\/$/;"	v	file:
-TEST	bresnham.c	9;"	d	file:
-TEXTP	chardraw.c	/^TEXTPAR	TEXTP, *tp = &TEXTP;$/;"	v
-TEXTPAR	chardraw.h	/^  TEXTPAR, *TextPar;$/;"	t	typeref:struct:__anon2
-TILE	hp2xx.h	/^} TILE;$/;"	t	typeref:struct:__anon8
 TIMER_H	timer.h	22;"	d
-TL	hpgl.c	248;"	d	file:
-TMP_to_BUF	hp2xx.c	/^int TMP_to_BUF (const GEN_PAR *pg, OUT_PAR *po) {$/;"	f
-TMP_to_VEC	hp2xx.c	/^int	TMP_to_VEC (const GEN_PAR *pg, const OUT_PAR *po)$/;"	f
-TRUE	hp2xx.h	95;"	d
-TURBO_C	hp2xx.h	66;"	d
-TextPar	chardraw.h	/^  TEXTPAR, *TextPar;$/;"	t	typeref:struct:__anon2
-Txx	chardraw.h	/^  double	Txx,Txy,Tyx,Tyy;	\/* Transformation matrix	*\/$/;"	m	struct:__anon2
-Txy	chardraw.h	/^  double	Txx,Txy,Tyx,Tyy;	\/* Transformation matrix	*\/$/;"	m	struct:__anon2
-Tyx	chardraw.h	/^  double	Txx,Txy,Tyx,Tyy;	\/* Transformation matrix	*\/$/;"	m	struct:__anon2
-Tyy	chardraw.h	/^  double	Txx,Txy,Tyx,Tyy;	\/* Transformation matrix	*\/$/;"	m	struct:__anon2
-UC	hpgl.c	249;"	d	file:
-UL	hpgl.c	250;"	d	file:
-UNLOAD_PAPER	main.c	47;"	d	file:
+UNLOAD_PAPER	main.c	48;"	d	file:
 USB_H	usb.h	22;"	d
 USB_INBUF_LEN	usb.c	32;"	d	file:
 USB_OUTBUF_LEN	usb.c	33;"	d	file:
-User_to_Plotter_coord	hpgl.c	/^User_to_Plotter_coord (const HPGL_Pt * p_usr, HPGL_Pt * p_plot)$/;"	f	file:
 VERSION	version.h	1;"	d
-VERS_ADDITIONS	hp2xx.c	/^char	*VERS_ADDITIONS = "                              (c) 1999 - 2001 Martin Kroeker\\n";$/;"	v
-VERS_ADDITIONS	hp2xx.c	/^char	*VERS_ADDITIONS =$/;"	v
-VERS_COPYRIGHT	hp2xx.c	/^char	*VERS_COPYRIGHT = "(c) 1991 - 1994 (V3.20) Heinz W. Werntges";$/;"	v
-VERS_DATE	hp2xx.c	/^char	*VERS_DATE = "01\/02\/09";$/;"	v
-VERS_NO	hp2xx.c	/^char	*VERS_NO = "3.4.0";$/;"	v
-VOID	hp2xx.h	133;"	d
-VOID	hp2xx.h	135;"	d
-WD	hpgl.c	251;"	d	file:
-WG	hpgl.c	252;"	d	file:
-WIDTH_FAC	chardraw.c	323;"	d	file:
-WRITE_BIN	hp2xx.h	294;"	d
-WRITE_BIN	hp2xx.h	297;"	d
-WU	hpgl.c	253;"	d	file:
-XT	hpgl.c	254;"	d	file:
-XX_CAD	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_CS	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_EM	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_EPIC	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_EPS	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_ESC2	hp2xx.h	/^	XX_RGIP, XX_TIFF, XX_ESC2, XX_TERM	\/* Dummy: terminator	*\/$/;"	e	enum:__anon7
-XX_FIG	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_GPT	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_HPGL	hp2xx.h	/^	XX_CAD, XX_CS, XX_EM, XX_EPIC, XX_EPS, XX_FIG, XX_GPT, XX_HPGL,$/;"	e	enum:__anon7
-XX_ILBM	hp2xx.h	/^	XX_ILBM, XX_IMG,$/;"	e	enum:__anon7
-XX_IMG	hp2xx.h	/^	XX_ILBM, XX_IMG,$/;"	e	enum:__anon7
-XX_MF	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_PAC	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_PBM	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_PCL	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_PCX	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_PIC	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_PNG	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_PRE	hp2xx.h	/^	XX_MF, XX_PBM, XX_PCL, XX_PCX, XX_PAC, XX_PIC, XX_PNG, XX_PRE,$/;"	e	enum:__anon7
-XX_RGIP	hp2xx.h	/^	XX_RGIP, XX_TIFF, XX_ESC2, XX_TERM	\/* Dummy: terminator	*\/$/;"	e	enum:__anon7
-XX_TERM	hp2xx.h	/^	XX_RGIP, XX_TIFF, XX_ESC2, XX_TERM	\/* Dummy: terminator	*\/$/;"	e	enum:__anon7
-XX_TIFF	hp2xx.h	/^	XX_RGIP, XX_TIFF, XX_ESC2, XX_TERM	\/* Dummy: terminator	*\/$/;"	e	enum:__anon7
-YT	hpgl.c	255;"	d	file:
-_BS	chardraw.h	15;"	d
-_CR	chardraw.h	19;"	d
-_Dt_CLIP_H	clip.h	9;"	d
-_HT	chardraw.h	16;"	d
-_LF	chardraw.h	17;"	d
-_SI	chardraw.h	21;"	d
-_SO	chardraw.h	20;"	d
-_VT	chardraw.h	18;"	d
-__HP2XX_H	hp2xx.h	2;"	d
-__LINDEF_H	lindef.h	4;"	d
-__PENDEF_H	pendef.h	4;"	d
-abs	hp2xx.h	/^    int abs;$/;"	m	struct:__anon16
-adjust_input_transform	hpgl.c	/^adjust_input_transform (const GEN_PAR * pg, const IN_PAR * pi, OUT_PAR * po)$/;"	f
-adjust_text_par	chardraw.c	/^adjust_text_par (void)$/;"	f
 alloc_cmd	stepper.c	/^static struct cmd *alloc_cmd( uint8_t type )$/;"	f	file:
-altfont	chardraw.h	/^  int  altfont; \/* Designated alternate font number     *\/$/;"	m	struct:__anon2
-arc_increment	hpgl.c	/^arc_increment (HPGL_Pt * pcenter, double r, double phi)$/;"	f	file:
-arcs	hpgl.c	/^arcs (int relative, FILE * hd)$/;"	f	file:
 argc	cli.c	/^static uint8_t argc;$/;"	v	file:
 argv	cli.c	/^static char *argv[MAX_ARGS+1];$/;"	v	file:
-aspectfactor	hp2xx.h	/^   double  aspectfactor;	\/* -a aspectfactor		*\/$/;"	m	struct:__anon13
 at_home	stepper.c	75;"	d	file:
-autoset_outfile_name	hp2xx.c	/^void	autoset_outfile_name($/;"	f
-ax_ticks	hpgl.c	/^ax_ticks (int mode)$/;"	f	file:
 b	stepper.c	/^} b;$/;"	v	typeref:struct:bresenham	file:
-b_line	bresnham.c	/^void	b_line (DevPt *pp1, DevPt *pp2, int col)$/;"	f
 beeper_off	timer.c	/^void beeper_off( void )$/;"	f
 beeper_on	timer.c	/^void beeper_on( int Hz )$/;"	f
 bezier_eval	cli.c	/^static int bezier_eval( int *p, float t )$/;"	f	file:
 bezier_prep	cli.c	/^static void bezier_prep( int *k, int *p )$/;"	f	file:
 bresenham	stepper.c	/^static struct bresenham$/;"	s	file:
-bresenham_init	bresnham.c	/^DevPt	*bresenham_init (DevPt *pp1, DevPt *pp2)$/;"	f
 bresenham_init	stepper.c	/^static void bresenham_init( int x1, int y1 )$/;"	f	file:
-bresenham_next	bresnham.c	/^int	bresenham_next (void)$/;"	f
 bresenham_step	stepper.c	/^static void bresenham_step( void )$/;"	f	file:
 buf	cli.c	/^static char buf[BUFLEN + 1];$/;"	v	file:
-buf	hp2xx.h	/^ Byte *buf;	\/* Ptr to actual data buffer which holds the bits *\/$/;"	m	struct:__anon8
 buf_len	cli.c	/^static uint8_t buf_len = 0;$/;"	v	file:
-buff	chardraw.h	/^  unsigned int    buff[16000];	\/* Buffer for font data		*\/$/;"	m	struct:__anon4
 bufindr	gcode.c	/^int bufindr = 0;$/;"	v
 bufindw	gcode.c	/^int bufindw = 0;$/;"	v
 buflen	gcode.c	/^int buflen = 0;$/;"	v
 byte	main.c	24;"	d	file:
-center_mode	hp2xx.h	/^   int	center_mode;		\/* -C				*\/$/;"	m	struct:__anon13
 channel	dial.c	/^static uint8_t channel = 0;$/;"	v	file:
-chardiff	chardraw.h	/^  HPGL_Pt	chardiff,	\/* Horiz. distance between characters	*\/$/;"	m	struct:__anon2
-charset0	charset0.h	/^char	*charset0[128] =$/;"	v
-charset1	charset1.h	/^char	*charset1[128] =$/;"	v
-charset2	charset2.h	/^char	*charset2[128] =$/;"	v
-charset3	charset3.h	/^char	*charset3[128] =$/;"	v
-charset4	charset4.h	/^char	*charset4[128] =$/;"	v
-charset5	charset5.h	/^char	*charset5[128] =$/;"	v
-charset6	charset6.h	/^char	*charset6[128] =$/;"	v
-charset7	charset7.h	/^char	*charset7[128] =$/;"	v
-circles	hpgl.c	/^circles (FILE * hd)$/;"	f	file:
 class	cli.c	/^    uint8_t class;$/;"	m	struct:keyword	file:
 class	cli.c	/^    uint8_t class;$/;"	m	struct:token	file:
-cleanup	hp2xx.c	/^cleanup (GEN_PAR *pg, IN_PAR *pi, OUT_PAR *po)$/;"	f
-cleanup_g	hp2xx.c	/^cleanup_g (GEN_PAR *pg)$/;"	f
-cleanup_i	hp2xx.c	/^cleanup_i (IN_PAR *pi)$/;"	f
-cleanup_o	hp2xx.c	/^cleanup_o (OUT_PAR *po)$/;"	f
 cli_h	cli.h	22;"	d
 cli_poll	cli.c	/^void cli_poll( void )$/;"	f
 clk_h	keypad.c	86;"	d	file:
 clk_l	keypad.c	87;"	d	file:
-clut	pendef.h	/^   BYTE  clut[NUMPENS+9][3];    \/* color lookup table           *\/$/;"	m	struct:__anon18
 cmd	stepper.c	/^struct cmd$/;"	s	file:
 cmd_error	cli.c	/^static jmp_buf cmd_error;$/;"	v	file:
 cmd_head	stepper.c	/^static volatile uint8_t cmd_head, cmd_tail;$/;"	v	file:
@@ -403,10 +124,8 @@ cmd_queue	stepper.c	/^} cmd_queue[CMD_QUEUE_SIZE];$/;"	v	typeref:struct:cmd
 cmd_tail	stepper.c	/^static volatile uint8_t cmd_head, cmd_tail;$/;"	v	file:
 cmdbuffer	gcode.c	/^char cmdbuffer[BUFSIZE][MAX_CMD_SIZE];$/;"	v
 code_seen	gcode.c	/^bool code_seen(char code) {$/;"	f
-code_to_ucoord	chardraw.c	/^code_to_ucoord (char c, HPGL_Pt *pp)$/;"	f	file:
 code_value	gcode.c	/^float code_value(void) {$/;"	f
 code_value_long	gcode.c	/^long code_value_long(void) {$/;"	f
-color	pendef.h	/^   PEN_C color[NUMPENS+1];      \/* -c xxxxxxxx \/ PC             *\/$/;"	m	struct:__anon18
 comment_mode	gcode.c	/^bool comment_mode = false;$/;"	v
 count_25Hz	timer.c	/^static uint8_t count_25Hz = 10;$/;"	v	file:
 count_Hz	timer.c	/^static uint8_t count_Hz = 250;$/;"	v	file:
@@ -418,12 +137,8 @@ data_h	keypad.c	88;"	d	file:
 data_l	keypad.c	89;"	d	file:
 debug_off	stepper.c	58;"	d	file:
 debug_on	stepper.c	57;"	d	file:
-decode_PE_char	hpgl.c	/^decode_PE_char (int c, PE_flags * fl)$/;"	f
 delay	stepper.c	/^static int delay;		\/\/ delay between steps (if not 0)$/;"	v	file:
-delete	hp2xx.h	109;"	d
 delta	stepper.c	/^    int delta;			\/\/ number of steps in other direction $/;"	m	struct:bresenham	file:
-depth	chardraw.h	/^  unsigned int    depth;$/;"	m	struct:__anon4
-depth	hp2xx.h	/^ int	depth;		\/* Depth: Number of bit planes (1 to 4)		*\/$/;"	m	struct:__anon9
 dial_adc	dial.c	/^static unsigned char dial_adc[MAX_DIALS];$/;"	v	file:
 dial_get_pressure	dial.c	/^int dial_get_pressure( void )$/;"	f
 dial_get_size	dial.c	/^int dial_get_size( void )$/;"	f
@@ -432,32 +147,16 @@ dial_init	dial.c	/^void dial_init( void )$/;"	f
 dial_poll	dial.c	/^void dial_poll( void )$/;"	f
 dial_setting	dial.c	/^static int dial_setting( uint8_t dial )$/;"	f	file:
 dial_steps	dial.c	/^static unsigned char dial_steps[MAX_DIALS] = { 10, 5, 5 };$/;"	v	file:
-dir	chardraw.h	/^  float dir;	\/* Direction to x axis (rad)		*\/$/;"	m	struct:__anon2
 do_next_command	stepper.c	/^enum state do_next_command( void )$/;"	f
-dpi_x	hp2xx.h	/^   int	dpi_x, dpi_y;		\/* -d dpi_x  -y dpi_y		*\/$/;"	m	struct:__anon14
-dpi_y	hp2xx.h	/^   int	dpi_x, dpi_y;		\/* -d dpi_x  -y dpi_y		*\/$/;"	m	struct:__anon14
-dsh	hp2xx.h	/^ int	dsh;		\/* depth right shift: 1->3, 4->1 (8->0)		*\/$/;"	m	struct:__anon9
-dx	bresnham.c	/^static	int	dx, dy, s1, s2, swapdir, err, i;$/;"	v	file:
 dx	stepper.c	/^    int dx;			\/\/ x step direction$/;"	m	struct:bresenham	file:
-dy	bresnham.c	/^static	int	dx, dy, s1, s2, swapdir, err, i;$/;"	v	file:
 dy	stepper.c	/^    int dy;			\/\/ y step direction$/;"	m	struct:bresenham	file:
 e_h	lcd.c	64;"	d	file:
 e_l	lcd.c	65;"	d	file:
 echo	cli.c	/^static char echo = 0;$/;"	v	file:
-eline	chardraw.h	/^  float eline;	\/* Extra line space rel. to 'line'	*\/$/;"	m	struct:__anon2
 enquecommand	gcode.c	/^void enquecommand(const char *cmd) {$/;"	f
-err	bresnham.c	/^static	int	dx, dy, s1, s2, swapdir, err, i;$/;"	v	file:
 error	stepper.c	/^    int error;			\/\/ residual error$/;"	m	struct:bresenham	file:
-espace	chardraw.h	/^  float espace;	\/* Extra char space rel. to 'space'	*\/$/;"	m	struct:__anon2
 expect_token	cli.c	/^static void expect_token( uint8_t class, const char *what )$/;"	f	file:
-fill	fillpoly.c	/^void fill(HPGL_Pt polygon[MAXPOLY], int numpoints,HPGL_Pt P1, HPGL_Pt P2,$/;"	f
-filltype	hpgl.c	/^static int filltype = 1;$/;"	v	file:
 find_keyword	cli.c	/^static const struct keyword *find_keyword( char *str )$/;"	f	file:
-first	chardraw.h	/^  unsigned int    first;	\/* ASCII code of first character*\/$/;"	m	struct:__anon4
-first_page	hp2xx.h	/^   int	first_page, last_page;	\/* -P first_page:last_page	*\/$/;"	m	struct:__anon13
-first_page	hpgl.c	/^static short first_page = 0;$/;"	v	file:
-fixedcolor	hpgl.c	/^static short fixedcolor = FALSE;$/;"	v	file:
-fixedwidth	hpgl.c	/^static short fixedwidth = FALSE;$/;"	v	file:
 flag_25Hz	timer.c	/^volatile uint8_t flag_25Hz;$/;"	v
 flag_Hz	timer.c	/^volatile uint8_t flag_Hz;$/;"	v
 flash_clocks	flash.c	/^static void flash_clocks( char count )$/;"	f	file:
@@ -467,41 +166,15 @@ flash_read_status	flash.c	/^static uint8_t flash_read_status( void )$/;"	f	file:
 flash_test	flash.c	/^void flash_test( void )$/;"	f
 flash_write_byte	flash.c	/^static void flash_write_byte( uint8_t data )$/;"	f	file:
 flash_write_cmd	flash.c	/^static void flash_write_cmd( uint8_t cmd, uint32_t addr )$/;"	f	file:
-font	chardraw.h	/^  int  font;	\/* Active Font number                   *\/$/;"	m	struct:__anon2
-formfeed	hp2xx.h	/^   int	formfeed;		\/* -F  (PCL only)		*\/$/;"	m	struct:__anon14
-fract	hp2xx.h	/^    int fract;$/;"	m	struct:__anon16
-fwedges	hpgl.c	/^fwedges (FILE * hd, float cur_pensize)		\/*derived from circles *\/$/;"	f	file:
 gcode_LastN	gcode.c	/^long gcode_N, gcode_LastN;$/;"	v
 gcode_N	gcode.c	/^long gcode_N, gcode_LastN;$/;"	v
 gcode_loop	gcode.c	/^void gcode_loop(void) {$/;"	f
 get_cmd	stepper.c	/^static struct cmd *get_cmd( void )$/;"	f	file:
 get_command	gcode.c	/^void get_command() {$/;"	f
-get_label_offset	chardraw.c	/^get_label_offset (char *txt, LB_Mode mode)$/;"	f	file:
 get_miso	flash.c	50;"	d	file:
 get_rows	keypad.c	90;"	d	file:
 get_token	cli.c	/^static uint8_t get_token( void )$/;"	f	file:
-getch	hp2xx.h	74;"	d
-hatchangle	hpgl.c	/^static float hatchangle=0.;$/;"	v	file:
-hatchspace	hpgl.c	/^static float hatchspace=0.;$/;"	v	file:
-hd	hp2xx.h	/^   FILE	*hd;			\/* (internally needed)		*\/$/;"	m	struct:__anon13
-height	chardraw.h	/^  float height;	\/* Height of a char (y dirc.)		*\/$/;"	m	struct:__anon2
-height	chardraw.h	/^  unsigned int    height;$/;"	m	struct:__anon4
-height	hp2xx.h	/^   double  width, height;	\/* -w width -h height		*\/$/;"	m	struct:__anon13
-height	hp2xx.h	/^   double width, height;	\/* Internal copies from IN_PAR	*\/$/;"	m	struct:__anon14
-hp2xx_mode	hp2xx.h	/^} hp2xx_mode;$/;"	t	typeref:enum:__anon7
 hpgl_mode	gcode.c	/^bool hpgl_mode = false;$/;"	v
-hwcolor	hp2xx.h	/^   int  hwcolor;		\/* -c				*\/$/;"	m	struct:__anon13
-hwsize	hp2xx.h	/^   int  hwsize;			\/* -p				*\/$/;"	m	struct:__anon13
-i	bresnham.c	/^static	int	dx, dy, s1, s2, swapdir, err, i;$/;"	v	file:
-in_file	hp2xx.h	/^   char	*in_file;		\/* Input file name ("-" = stdin)*\/$/;"	m	struct:__anon13
-init_HPGL	hpgl.c	/^init_HPGL (const GEN_PAR * pg, const IN_PAR * pi)$/;"	f	file:
-init_p	hp2xx.h	/^   int	init_p;			\/* -i  (PCL only)		*\/$/;"	m	struct:__anon14
-init_text_par	chardraw.c	/^init_text_par (void)$/;"	f
-isPEterm	hpgl.c	/^isPEterm (int c, PE_flags * fl)$/;"	f
-is_color	hp2xx.h	/^   int	 is_color;		\/* (internally needed)		*\/$/;"	m	struct:__anon15
-iwflag	hpgl.c	/^int iwflag = 0;			\/*MK *\/$/;"	v
-kby	hp2xx.h	/^ unsigned kby;		\/* size of a tile in bytes, always <= 32K	*\/$/;"	m	struct:__anon9
-kext	hp2xx.h	/^ DevPt	kext;		\/* number of tiles covering the image		*\/$/;"	m	struct:__anon9
 keypad_init	keypad.c	/^void keypad_init( void )$/;"	f
 keypad_prev	keypad.c	/^uint8_t keypad_prev[MAX_COLS];  \/\/ previous state$/;"	v
 keypad_scan	keypad.c	/^int keypad_scan( void )$/;"	f
@@ -510,12 +183,6 @@ keypad_state	keypad.c	/^uint8_t keypad_state[MAX_COLS];	\/\/ current state$/;"	v
 keypad_stop_pressed	keypad.c	/^char keypad_stop_pressed( void )$/;"	f
 keypad_write_cols	keypad.c	/^static void keypad_write_cols( short val )$/;"	f	file:
 keyword	cli.c	/^static const struct keyword$/;"	s	file:
-ksh	hp2xx.h	/^ int	ksh;		\/* tile shift, 6,  7,  8,  9   (9 not for 16c)	*\/$/;"	m	struct:__anon9
-kshx	hp2xx.h	/^ int	kshx;		\/* tile scan-line shift				*\/$/;"	m	struct:__anon9
-ksi	hp2xx.h	/^ int	ksi;		\/* tile size, 64,128,256,512 (512 not for 16c)	*\/$/;"	m	struct:__anon9
-ksix	hp2xx.h	/^ int	ksix;		\/* tile scan-line length in bytes		*\/$/;"	m	struct:__anon9
-last_page	hp2xx.h	/^   int	first_page, last_page;	\/* -P first_page:last_page	*\/$/;"	m	struct:__anon13
-last_page	hpgl.c	/^static int last_page = 0;$/;"	v	file:
 lcd	lcd.c	/^FILE lcd = FDEV_SETUP_STREAM( lcd_putchar, 0, _FDEV_SETUP_WRITE );$/;"	v
 lcd_backlight_off	lcd.c	/^void lcd_backlight_off( void )$/;"	f
 lcd_backlight_on	lcd.c	/^void lcd_backlight_on( void )$/;"	f
@@ -532,46 +199,14 @@ leds	keypad.c	/^uint16_t leds;$/;"	v
 leds_off	keypad.c	85;"	d	file:
 leds_on	keypad.c	84;"	d	file:
 lex	cli.c	/^    char *lex;$/;"	m	struct:token	file:
-line	chardraw.h	/^  float line;	\/* Distance betw. char. lines		*\/$/;"	m	struct:__anon2
-line	hpgl.c	/^void line (int relative, HPGL_Pt p)$/;"	f
-linediff	chardraw.h	/^		linediff,	\/* Vertical distance between characters	*\/$/;"	m	struct:__anon2
-lines	hpgl.c	/^lines (int relative, FILE * hd)$/;"	f	file:
-load_pen_color_table	pendef.c	/^int load_pen_color_table(FILE *td){$/;"	f
-load_pen_width_table	pendef.c	/^int load_pen_width_table(FILE *td){$/;"	f
-logfile	hp2xx.h	/^   char  *logfile;		\/* -l logfile			*\/$/;"	m	struct:__anon15
-lt	lindef.c	/^LINESTYLE lt;$/;"	v
-main	bresnham.c	/^void	main(void)$/;"	f
 main	main.c	/^int main(void) {$/;"	f
-maxcolor	hp2xx.h	/^   int	 maxcolor;		\/* (internally needed)		*\/$/;"	m	struct:__anon15
-maxpens	hp2xx.h	/^   int   maxpens;               \/* (internally needed)          *\/$/;"	m	struct:__anon15
-maxpensize	hp2xx.h	/^   int	 maxpensize;		\/* (internally needed)		*\/$/;"	m	struct:__anon15
-mode	hp2xx.h	/^	hp2xx_mode	mode;$/;"	m	struct:__anon12
-mode	hp2xx.h	/^   char  *mode;			\/* -m mode			*\/$/;"	m	struct:__anon15
-mode_list	hp2xx.h	/^} mode_list;$/;"	t	typeref:struct:__anon12
-mode_vert	hpgl.c	/^int mode_vert = 0;$/;"	v
-modestr	hp2xx.h	/^	char		*modestr;$/;"	m	struct:__anon12
 mosi_high	flash.c	47;"	d	file:
 mosi_low	flash.c	46;"	d	file:
+moveHead	gcode.c	/^void moveHead(int x, int y) {$/;"	f
 movePen	gcode.c	/^void movePen(int x, int y) {$/;"	f
 msleep	timer.c	/^void msleep( unsigned msecs )$/;"	f
-mv_flag	hpgl.c	/^static short mv_flag = FALSE;$/;"	v	file:
-n_unexpected	hpgl.c	/^static int n_unexpected = 0;$/;"	v	file:
-n_unknown	hpgl.c	/^static int n_unknown = 0;$/;"	v	file:
-name	chardraw.h	/^  char           *name;$/;"	m	struct:__anon4
-nb	hp2xx.h	/^ int	nb;		\/* bytes per row				*\/$/;"	m	struct:__anon9
-neg_ticklen	hpgl.c	/^static float xmin, xmax, ymin, ymax, neg_ticklen, pos_ticklen;$/;"	v	file:
-next	hp2xx.h	/^ int next,prev;	\/* double-linked list indices			*\/$/;"	m	struct:__anon8
-nk	hp2xx.h	/^ int	nk;		\/* number of tiles (for allocation, <8K for DOS)*\/$/;"	m	struct:__anon9
-nofill	hp2xx.h	/^   int   nofill;		\/* -n				*\/$/;"	m	struct:__anon15
-np	hp2xx.h	/^ int	np;		\/* pixel per row (rounded up to whole bytes)	*\/$/;"	m	struct:__anon9
-num	chardraw.h	/^  unsigned int    num;		\/* Number of defined  character	*\/$/;"	m	struct:__anon4
-offset	chardraw.h	/^		offset;	\/* Needed for HP-GL command ``LO;''	*\/$/;"	m	struct:__anon2
-orig	chardraw.h	/^  int  orig;	\/* Label origin code			*\/$/;"	m	struct:__anon2
-outfile	hp2xx.h	/^   char	  *outfile;		\/* -f outfile ("-" = stdout)	*\/$/;"	m	struct:__anon14
-p_act	bresnham.c	/^static	DevPt	p_act;$/;"	v	file:
-p_last	hpgl.c	/^static HPGL_Pt p_last =$/;"	v	file:
-page_number	hpgl.c	/^static int page_number = 1;$/;"	v	file:
-par_err_exit	hpgl.c	/^par_err_exit (int code, int cmd)$/;"	f	file:
+nullMode	gcode.c	/^void nullMode(bool b) {$/;"	f
+null_mode	gcode.c	/^bool null_mode = false;$/;"	v
 parse	cli.c	/^static void parse( char *buf )$/;"	f	file:
 parse_curve	cli.c	/^static void parse_curve( void )$/;"	f	file:
 parse_draw	cli.c	/^static void parse_draw( void )$/;"	f	file:
@@ -581,90 +216,27 @@ parse_num	cli.c	/^static long parse_num( void )$/;"	f	file:
 parse_pressure	cli.c	/^static void parse_pressure( void )$/;"	f	file:
 parse_reset	cli.c	/^static void parse_reset( void )$/;"	f	file:
 parse_speed	cli.c	/^static void parse_speed( void )$/;"	f	file:
-pat_pos	hpgl.c	/^static double Diag_P1_P2,pat_pos;$/;"	v	file:
-pen	hp2xx.h	/^    int pen;$/;"	m	struct:__anon16
-pen	hpgl.c	/^static short pen = -1;$/;"	v	file:
-pen_down	hpgl.c	/^static short pen_down = FALSE;	\/* Internal HP-GL book-keeping: *\/$/;"	v	file:
 pen_down	stepper.c	/^static void pen_down( void )$/;"	f	file:
 pen_seq	stepper.c	/^static int pen_seq;$/;"	v	file:
 pen_time	stepper.c	/^int pen_time[4] = { 10, 12, 40 };$/;"	v
 pen_up	stepper.c	/^static void pen_up( void )$/;"	f	file:
-pens_in_use	hpgl.c	/^static short pens_in_use[NUMPENS];$/;"	v	file:
 penup	gcode.c	/^bool penup = true;$/;"	v
-pext	hp2xx.h	/^ DevPt	pext;		\/* image size					*\/$/;"	m	struct:__anon9
 phase	stepper.c	/^static uint8_t phase[] = $/;"	v	file:
-picbuf	hp2xx.h	/^   PicBuf *picbuf;		\/* (internally needed)		*\/$/;"	m	struct:__anon14
-plot_rel	hpgl.c	/^static short plot_rel = FALSE;$/;"	v	file:
-plot_string	chardraw.c	/^plot_string (char *txt, LB_Mode mode)$/;"	f
-plot_symbol_char	chardraw.c	/^plot_symbol_char (char c)$/;"	f
-plot_user_char	chardraw.c	/^plot_user_char (FILE *hd)$/;"	f
 poll_keypad	main.c	/^void poll_keypad(void) {$/;"	f
-polygon_mode	hpgl.c	/^static short polygon_mode = FALSE;$/;"	v	file:
-polygon_penup	hpgl.c	/^static short polygon_penup = FALSE;$/;"	v	file:
-polygons	hpgl.c	/^static HPGL_Pt polygons[MAXPOLY];$/;"	v	file:
-pos_ticklen	hpgl.c	/^static float xmin, xmax, ymin, ymax, neg_ticklen, pos_ticklen;$/;"	v	file:
-preset_par	hp2xx.c	/^void	preset_par (GEN_PAR *pg, IN_PAR *pi, OUT_PAR *po)$/;"	f
 pressure	stepper.c	/^static int pressure = 1023;$/;"	v	file:
-prev	hp2xx.h	/^ int next,prev;	\/* double-linked list indices			*\/$/;"	m	struct:__anon8
-print_line_style	lindef.c	/^void print_line_style(void) {$/;"	f
-print_supported_modes	hp2xx.c	/^void	print_supported_modes(void)$/;"	f
 process_commands	gcode.c	/^void process_commands() {$/;"	f
-ps_flag	hpgl.c	/^static short ps_flag = FALSE;$/;"	v	file:
-pt	pendef.c	/^PEN             pt;$/;"	v
-quiet	hp2xx.h	/^   int	 quiet;			\/* -q				*\/$/;"	m	struct:__anon15
-read_ESC_HP7550A	hpgl.c	/^read_ESC_HP7550A (FILE * hd)$/;"	f	file:
-read_ESC_RTL	hpgl.c	/^read_ESC_RTL(FILE *hd,int c1,int hp)$/;"	f	file:
-read_ESC_cmd	hpgl.c	/^read_ESC_cmd (FILE *hd,int hp)$/;"	f	file:
-read_HPGL	hpgl.c	/^void read_HPGL (GEN_PAR * pg, const IN_PAR * pi) {$/;"	f
-read_HPGL_cmd	hpgl.c	/^void read_HPGL_cmd (GEN_PAR * pg, short cmd, FILE * hd) {$/;"	f
-read_PE	hpgl.c	/^read_PE (const GEN_PAR * pg, FILE * hd)$/;"	f
-read_PE_coord	hpgl.c	/^read_PE_coord (int c, FILE * hd, PE_flags * fl, float *fv)$/;"	f
-read_PE_flags	hpgl.c	/^read_PE_flags (const GEN_PAR * pg, int c, FILE * hd, PE_flags * fl)$/;"	f
-read_PE_pair	hpgl.c	/^read_PE_pair (int c, FILE * hd, PE_flags * fl, HPGL_Pt * p)$/;"	f
-read_PJL	hpgl.c	/^read_PJL(FILE *hd)$/;"	f	file:
-read_float	hpgl.c	/^read_float (float *pnum, FILE * hd)$/;"	f
-read_string	hpgl.c	/^read_string (char *buf, FILE * hd)$/;"	f	file:
-read_symbol_char	hpgl.c	/^read_symbol_char (FILE * hd)$/;"	f	file:
-record_off	hpgl.c	/^static short record_off = FALSE;$/;"	v	file:
-rect	hpgl.c	/^rect (int relative, int filled, float cur_pensize, FILE * hd)$/;"	f	file:
-refpoint	chardraw.h	/^		refpoint,	\/* Current reference point	*\/$/;"	m	struct:__anon2
 relative_mode	gcode.c	/^bool relative_mode = true;$/;"	v
-reset_HPGL	hpgl.c	/^reset_HPGL (void)$/;"	f	file:
-reset_par	hp2xx.c	/^void	reset_par (IN_PAR *pi)$/;"	f
-rot_ang	hpgl.c	/^static double rot_ang = 0.;$/;"	v	file:
-rot_cos	hpgl.c	/^static float rot_cos, rot_sin;$/;"	v	file:
-rot_sin	hpgl.c	/^static float rot_cos, rot_sin;$/;"	v	file:
-rotate_flag	hpgl.c	/^static short rotate_flag = FALSE;	\/* Flags tec external to HP-GL  *\/$/;"	v	file:
-rotation	hp2xx.h	/^   double  rotation;		\/* -r rotation			*\/$/;"	m	struct:__anon13
 rs_h	lcd.c	67;"	d	file:
 rs_l	lcd.c	68;"	d	file:
 rw_h	lcd.c	61;"	d	file:
 rw_l	lcd.c	62;"	d	file:
-s1	bresnham.c	/^static	int	dx, dy, s1, s2, swapdir, err, i;$/;"	v	file:
-s2	bresnham.c	/^static	int	dx, dy, s1, s2, swapdir, err, i;$/;"	v	file:
-sbmode	hp2xx.h	/^    int sbmode;$/;"	m	struct:__anon16
-scale_flag	hpgl.c	/^short scale_flag = FALSE;$/;"	v
 sck_high	flash.c	49;"	d	file:
 sck_low	flash.c	48;"	d	file:
-sd	hp2xx.h	/^ FILE	*sd;		\/* Swapfile pointer				*\/$/;"	m	struct:__anon9
 serial_char	gcode.c	/^char serial_char;$/;"	v
 serial_count	gcode.c	/^int serial_count = 0;$/;"	v
-set_color_rgb	pendef.c	/^void set_color_rgb(PEN_N index,BYTE r,BYTE g, BYTE b) {$/;"	f
-set_line_style	lindef.c	/^void set_line_style(SCHAR index, ...){$/;"	f
-set_line_style_by_UL	lindef.c	/^void set_line_style_by_UL(FILE *hd){$/;"	f
-set_line_style_defaults	lindef.c	/^void set_line_style_defaults() {$/;"	f
-set_symbol_center	chardraw.c	/^set_symbol_center (char c)$/;"	f	file:
-sf_name	hp2xx.h	/^ char	*sf_name;	\/* Swapfile name				*\/$/;"	m	struct:__anon9
-silent_mode	hpgl.c	/^extern short silent_mode = FALSE;	\/* Don't clobber ATARI preview! *\/$/;"	v
-silent_mode	hpgl.c	/^static short silent_mode = FALSE;$/;"	v	file:
-size_off	chardraw.h	/^  unsigned int    size_off;	\/* Offset of size tab		*\/$/;"	m	struct:__anon4
-slant	chardraw.h	/^  float slant;	\/* Character slant (tan angle)		*\/$/;"	m	struct:__anon2
-space	chardraw.h	/^  float space;	\/* Distance between characters		*\/$/;"	m	struct:__anon2
-specials	hp2xx.h	/^   int  specials;		\/* -s specials  (PCL only)	*\/$/;"	m	struct:__anon14
 split_line	cli.c	/^static char split_line( char *line, char **argv )$/;"	f	file:
 state	stepper.c	/^static enum state$/;"	g	file:
 state	stepper.c	/^} state;$/;"	v	typeref:enum:state	file:
-stdfont	chardraw.h	/^  int  stdfont; \/* Designated tandard font number       *\/$/;"	m	struct:__anon2
 steep	stepper.c	/^    char steep;			\/\/ y > x$/;"	m	struct:bresenham	file:
 step	stepper.c	/^    int step;			\/\/ current step$/;"	m	struct:bresenham	file:
 stepper_draw	stepper.c	/^void stepper_draw( int x, int y )$/;"	f
@@ -680,29 +252,14 @@ stepper_tick	stepper.c	/^void stepper_tick( void )$/;"	f
 stepper_unload_paper	stepper.c	/^void stepper_unload_paper( void )$/;"	f
 steps	stepper.c	/^    int steps;			\/\/ number of steps in main direction$/;"	m	struct:bresenham	file:
 str	cli.c	/^    char str[10];$/;"	m	struct:keyword	file:
-strbuf	hpgl.c	/^static char *strbuf = NULL;$/;"	v	file:
-strbufsize	hpgl.c	/^static unsigned int strbufsize = MAX_LB_LEN + 1;$/;"	v	file:
 strchr_pointer	gcode.c	/^char *strchr_pointer; \/\/ just a pointer to find chars in the cmd string like X, Y, Z, E, etc$/;"	v
-swapdir	bresnham.c	/^static	int	dx, dy, s1, s2, swapdir, err, i;$/;"	v	file:
-swapfile	hp2xx.h	/^   char	 *swapfile;		\/* -s swapfile			*\/$/;"	m	struct:__anon15
-symbol_char	hpgl.c	/^static char symbol_char = '\\0';	\/* Char in Symbol Mode (0=off)  *\/$/;"	v	file:
-tails	hp2xx.h	/^ TILE	tails;	\/* points to the head and the tail of the linked list	*\/$/;"	m	struct:__anon9
-tarcs	hpgl.c	/^tarcs (int relative, FILE * hd)$/;"	f	file:
-td	hp2xx.h	/^   FILE	 	*td;		\/* (internally needed)		*\/$/;"	m	struct:__anon15
-td	hpgl.c	/^static FILE *td;$/;"	v	file:
-thickness	hpgl.c	/^static float thickness=0.;$/;"	v	file:
-tile	hp2xx.h	/^ TILE	*tile;		\/* Array pointer of all tiles			*\/$/;"	m	struct:__anon9
 timer_init	timer.c	/^void timer_init( void )$/;"	f
 timer_set_pen_pressure	timer.c	/^void timer_set_pen_pressure( int pressure )$/;"	f
 timer_set_stepper_speed	timer.c	/^void timer_set_stepper_speed( int delay )$/;"	f
 token	cli.c	/^static struct token$/;"	s	file:
 token	cli.c	/^} token;$/;"	v	typeref:struct:token	file:
-tp	chardraw.c	/^TEXTPAR	TEXTP, *tp = &TEXTP;$/;"	v
-truesize	hp2xx.h	/^   int	truesize;		\/* -t				*\/$/;"	m	struct:__anon13
 type	stepper.c	/^    enum type type;		\/\/ command type,$/;"	m	struct:cmd	typeref:enum:cmd::type	file:
 type	stepper.c	/^enum type$/;"	g	file:
-up	hp2xx.h	/^    int up;$/;"	m	struct:__anon16
-usage_msg	hp2xx.c	/^void	usage_msg (const GEN_PAR *pg, const IN_PAR *pi, const OUT_PAR *po)$/;"	f
 usb	main.c	/^static FILE usb = FDEV_SETUP_STREAM(usb_putchar, usb_getchar, _FDEV_SETUP_RW);$/;"	v	file:
 usb_getchar	usb.c	/^int usb_getchar( FILE *stream )$/;"	f
 usb_init	usb.c	/^void usb_init( void ) $/;"	f
@@ -717,53 +274,12 @@ usb_tx_head	usb.c	/^volatile static uint8_t usb_tx_head = 0;$/;"	v	file:
 usb_tx_tail	usb.c	/^volatile static uint8_t usb_tx_tail = 0;$/;"	v	file:
 usleep	timer.c	/^void usleep( int usecs )$/;"	f
 val	cli.c	/^    long val;$/;"	m	struct:token	file:
-vec_cntr_r	hpgl.c	/^static long vec_cntr_r = 0L;$/;"	v	file:
-vec_cntr_w	hpgl.c	/^static long vec_cntr_w = 0L;$/;"	v	file:
-vector_off	chardraw.h	/^  unsigned int    vector_off;	\/* Offset of start of plot data	*\/$/;"	m	struct:__anon4
 version	cli.c	/^void version( void )$/;"	f
-vertices	hpgl.c	/^static int vertices = -1;$/;"	v	file:
-vga_mode	hp2xx.h	/^   Byte	vga_mode;		\/* -V vga_mode			*\/$/;"	m	struct:__anon14
-vga_width	hp2xx.h	/^   int	vga_width;		\/* (internally needed)		*\/$/;"	m	struct:__anon14
-wedges	hpgl.c	/^wedges (FILE * hd)		\/*derived from circles *\/$/;"	f	file:
-width	chardraw.h	/^  float width;	\/* Width of a char (x dirc.)		*\/$/;"	m	struct:__anon2
-width	hp2xx.h	/^   double  width, height;	\/* -w width -h height		*\/$/;"	m	struct:__anon13
-width	hp2xx.h	/^   double width, height;	\/* Internal copies from IN_PAR	*\/$/;"	m	struct:__anon14
-width	pendef.h	/^   PEN_W width[NUMPENS+1];      \/* -p xxxxxxxx \/ PW             *\/$/;"	m	struct:__anon18
-wu_relative	hpgl.c	/^static short wu_relative = FALSE; $/;"	v	file:
-x	bresnham.h	/^	int	x,y;		\/* 2d - pseudo device coord	*\/$/;"	m	struct:__anon1
-x	hp2xx.h	/^	float	x,y;$/;"	m	struct:__anon10
 x	stepper.c	/^    int x, y; 			\/\/ target coordinates$/;"	m	struct:cmd	file:
 x	stepper.c	/^static int x = -MAT_EDGE, y = 2400; $/;"	v	file:
-x0	hp2xx.h	/^   double  x0, x1, y0, y1;	\/* -x x0 -X x1 -y y0 -Y y1	*\/$/;"	m	struct:__anon13
-x1	hp2xx.h	/^   double  x0, x1, y0, y1;	\/* -x x0 -X x1 -y y0 -Y y1	*\/$/;"	m	struct:__anon13
-xmax	hp2xx.h	/^   double xmin,ymin, xmax,ymax; \/* (internally needed)		*\/$/;"	m	struct:__anon14
-xmax	hpgl.c	/^static float xmin, xmax, ymin, ymax, neg_ticklen, pos_ticklen;$/;"	v	file:
-xmin	hp2xx.h	/^   double xmin,ymin, xmax,ymax; \/* (internally needed)		*\/$/;"	m	struct:__anon14
-xmin	hpgl.c	/^static float xmin, xmax, ymin, ymax, neg_ticklen, pos_ticklen;$/;"	v	file:
 xoff	gcode.c	/^int xoff=0;$/;"	v
-xoff	hp2xx.h	/^   double  xoff, yoff;		\/* -o xoff  -O yoff		*\/$/;"	m	struct:__anon13
-xoff	hp2xx.h	/^   double xoff, yoff;		\/* Internal copies from IN_PAR	*\/$/;"	m	struct:__anon14
 xpos	gcode.c	/^int xpos=0;$/;"	v
-xxBackground	pendef.h	12;"	d
-xxBlue	pendef.h	16;"	d
-xxCyan	pendef.h	17;"	d
-xxForeground	pendef.h	13;"	d
-xxGreen	pendef.h	15;"	d
-xxMagenta	pendef.h	18;"	d
-xxRed	pendef.h	14;"	d
-xxYellow	pendef.h	19;"	d
-xx_mode	hp2xx.h	/^   hp2xx_mode	xx_mode;	\/* (internally needed)		*\/$/;"	m	struct:__anon15
-y	bresnham.h	/^	int	x,y;		\/* 2d - pseudo device coord	*\/$/;"	m	struct:__anon1
-y	hp2xx.h	/^	float	x,y;$/;"	m	struct:__anon10
 y	stepper.c	/^    int x, y; 			\/\/ target coordinates$/;"	m	struct:cmd	file:
 y	stepper.c	/^static int x = -MAT_EDGE, y = 2400; $/;"	v	file:
-y0	hp2xx.h	/^   double  x0, x1, y0, y1;	\/* -x x0 -X x1 -y y0 -Y y1	*\/$/;"	m	struct:__anon13
-y1	hp2xx.h	/^   double  x0, x1, y0, y1;	\/* -x x0 -X x1 -y y0 -Y y1	*\/$/;"	m	struct:__anon13
-ymax	hp2xx.h	/^   double xmin,ymin, xmax,ymax; \/* (internally needed)		*\/$/;"	m	struct:__anon14
-ymax	hpgl.c	/^static float xmin, xmax, ymin, ymax, neg_ticklen, pos_ticklen;$/;"	v	file:
-ymin	hp2xx.h	/^   double xmin,ymin, xmax,ymax; \/* (internally needed)		*\/$/;"	m	struct:__anon14
-ymin	hpgl.c	/^static float xmin, xmax, ymin, ymax, neg_ticklen, pos_ticklen;$/;"	v	file:
 yoff	gcode.c	/^int yoff=0;$/;"	v
-yoff	hp2xx.h	/^   double  xoff, yoff;		\/* -o xoff  -O yoff		*\/$/;"	m	struct:__anon13
-yoff	hp2xx.h	/^   double xoff, yoff;		\/* Internal copies from IN_PAR	*\/$/;"	m	struct:__anon14
 ypos	gcode.c	/^int ypos=0;$/;"	v

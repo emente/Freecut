@@ -15,6 +15,9 @@
 
 #define MAX_CMD_SIZE 96
 #define BUFSIZE 4
+#define DPI_X   401
+#define DPI_Y   401
+
 
 char cmdbuffer[BUFSIZE][MAX_CMD_SIZE];
 int bufindr = 0;
@@ -36,7 +39,7 @@ int ypos=0;
 int xoff=0;
 int yoff=0;
 bool penup = true;
-
+bool null_mode = false;
 
 void gcode_loop(void) {
     if (buflen < (BUFSIZE - 1))
@@ -201,20 +204,33 @@ bool code_seen(char code) {
 }
 
 void movePen(int x, int y) {
+    if (null_mode) return;
+    
     x+=xoff;
     y+=yoff;
 
     if (x<0) x=0;
     if (y<0) y=0;
     
-    
-    x=x*401;
-    y=y*401;
+    x=x*DPI_X;
+    y=y*DPI_Y;
     if (penup) {
         stepper_move( x, y );
     } else {
         stepper_draw( x, y );
     }
+}
+
+void moveHead(int x, int y) {
+    x+=xoff;
+    y+=yoff;
+    x*=DPI_X;
+    y*=DPI_Y;
+    stepper_move(x,y);    
+}
+
+void nullMode(bool b) {
+        null_mode = b;    
 }
 
 void FlushSerialRequestResend() {
@@ -239,12 +255,12 @@ void process_commands() {
                     int newx = xpos;
                     int newy = ypos;
                     if (code_seen('X')) {
-                        newx = code_value();
+                        newx += code_value();
                     }
                     if (code_seen('Y')) {
-                        newy = code_value();
+                        newy += code_value();
                     }
-                    movePen(xpos+newx,ypos+newy);
+                    movePen(newx,newy);
                 } else {
                     int newx = xpos;
                     int newy = ypos;
