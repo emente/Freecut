@@ -14,7 +14,7 @@ TARGET = freecut
 FCLK = 16000000UL
 
 # List C source files here. (C dependencies are automatically generated.)
-SRC = main.c usb.c lcd.c keypad.c timer.c stepper.c cli.c flash.c dial.c
+SRC = main.c usb.c lcd.c keypad.c timer.c stepper.c flash.c dial.c gcode.c
 
 # Assembler sources 
 ASRC = 

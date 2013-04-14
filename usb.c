@@ -88,6 +88,7 @@ int usb_putchar( char c, FILE *stream )
     return 0;
 }
 
+
 /* 
  * look to see if Rx character is available, return -1 if not.
  */

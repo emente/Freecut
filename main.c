@@ -21,6 +21,9 @@
  *
  */
 
+#define byte unsigned char
+
+#include <stdbool.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
@@ -31,72 +34,73 @@
 #include "lcd.h"
 #include "timer.h"
 #include "stepper.h"
-#include "cli.h"
 #include "flash.h"
 #include "version.h"
 #include "dial.h"
+#include "string.h"
+#include "gcode.h"
 
-static FILE usb = FDEV_SETUP_STREAM( usb_putchar, usb_getchar, _FDEV_SETUP_RW );
+
+static FILE usb = FDEV_SETUP_STREAM(usb_putchar, usb_getchar, _FDEV_SETUP_RW);
 
 #define LOAD_PAPER	0x4c
 #define UNLOAD_PAPER	0x4d
 
-void poll_keypad( void )
-{
-    int key = keypad_scan( );
+void poll_keypad(void) {
+    int key = keypad_scan();
 
-    switch( key )
-    {
-	case LOAD_PAPER: 
-	    stepper_load_paper(); 
-	    break;
+    switch (key) {
+        case LOAD_PAPER:
+            stepper_load_paper();
+            break;
 
-	case UNLOAD_PAPER:
-	    stepper_unload_paper(); 
-	    break;
-	
-	default:
-	    if( key >= 0 )
-		printf( "# unknown key %02x\n", key );
+        case UNLOAD_PAPER:
+            stepper_unload_paper();
+            break;
+
+        default:
+            if (key >= 0)
+                printf("# unknown key %02x\n", key);
     }
 }
 
-int main( void )
-{
-    wdt_enable( WDTO_30MS );
-    usb_init( );
-    timer_init( );
-    stepper_init( );
-    sei( );
-    //keypad_init( );
-    dial_init( );
 
-    wdt_reset( );
+int main(void) {
+    wdt_enable(WDTO_30MS);
+    usb_init();
+    timer_init();
+    stepper_init();
+    sei();
+    //keypad_init( );
+    dial_init();
+
+    wdt_reset();
 
     // short beep to show we're awake
-    beeper_on( 1760 );
-    msleep( 10 );
-    beeper_off( );
+    beeper_on(1760);
+    msleep(10);
+    beeper_off();
 
     // connect stdout to USB port
-    stdout = &usb; 
-    printf( "start\n" );
-    while( 1 )
-    {
-        cli_poll( );
-		wdt_reset( );
-		if( flag_25Hz )
-		{
-			flag_25Hz = 0;
-			//poll_keypad( );
-		}
-		if( flag_Hz )
-		{
-			flag_Hz = 0;
+    stdout = &usb;
+    printf("start\n");
+    while (1) {
+        wdt_reset();
+        
+        gcode_loop();
 
-			dial_poll( );
-			stepper_speed( dial_get_speed() );
-			stepper_pressure( dial_get_pressure() );
-		}
+        if (flag_25Hz) {
+            flag_25Hz = 0;
+            //poll_keypad( );
+        }
+
+        if (flag_Hz) {
+            flag_Hz = 0;
+
+            dial_poll();
+            stepper_speed(dial_get_speed());
+            stepper_pressure(dial_get_pressure());
+        }
     }
 }
+        

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="79">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="Freecut" root=".">
+      <in>bresnham.c</in>
+      <in>bresnham.h</in>
+      <in>chardraw.c</in>
+      <in>chardraw.h</in>
+      <in>charset0.h</in>
+      <in>charset1.h</in>
+      <in>charset2.h</in>
+      <in>charset3.h</in>
+      <in>charset4.h</in>
+      <in>charset5.h</in>
+      <in>charset6.h</in>
+      <in>charset7.h</in>
+      <in>cli.c</in>
+      <in>cli.h</in>
+      <in>clip.c</in>
+      <in>clip.h</in>
+      <in>dial.c</in>
+      <in>dial.h</in>
+      <in>fillpoly.c</in>
+      <in>flash.c</in>
+      <in>flash.h</in>
+      <in>gcode.c</in>
+      <in>gcode.h</in>
+      <in>hp2xx.c</in>
+      <in>hp2xx.h</in>
+      <in>hpgl.c</in>
+      <in>hpgl.h</in>
+      <in>keypad.c</in>
+      <in>keypad.h</in>
+      <in>lcd.c</in>
+      <in>lcd.h</in>
+      <in>lindef.c</in>
+      <in>lindef.h</in>
+      <in>main.c</in>
+      <in>pendef.c</in>
+      <in>pendef.h</in>
+      <in>stepper.c</in>
+      <in>stepper.h</in>
+      <in>timer.c</in>
+      <in>timer.h</in>
+      <in>usb.c</in>
+      <in>usb.h</in>
+      <in>version.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>WinAVR|WinAVR</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem></pElem>
+            </incDir>
+          </cTool>
+        </makeTool>
+      </makefileType>
+    </conf>
+  </confs>
+</configurationDescriptor>
