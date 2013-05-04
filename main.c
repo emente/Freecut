@@ -57,9 +57,24 @@ static FILE usb = FDEV_SETUP_STREAM(usb_putchar, usb_getchar, _FDEV_SETUP_RW);
 #define B_CENTER    60
 #define B_ZERO      61
 
-int speed=0,lastSpeed=0;
-int press=0,lastPress=0;
-int step=10;
+int speed = 0, lastSpeed = -1;
+int press = 0, lastPress = -1;
+int step = 10;
+
+//speed 60(turbo)-120(slow) pressure 1023(min)-0(max)
+
+void updateStatusLeds(void) {
+    if (speed != lastSpeed || lastPress != press) {
+        stepper_speed(120 - (speed * 15));
+        stepper_pressure(1023 - (press * 255));
+
+        keypad_set_leds((1 << (speed*2)) | (2 << (press*2)));
+
+        lastSpeed = speed;
+        lastPress = press;
+    }
+}
+
 
 
 void poll_keypad(void) {
@@ -67,7 +82,7 @@ void poll_keypad(void) {
         nullMode(true);
         return;
     }
-    
+
     int key = keypad_scan();
     if (key == -1) {
         return;
@@ -76,19 +91,16 @@ void poll_keypad(void) {
 
     switch (key) {
         case B_UP:
-            gcode_move(step,0,false,true);
+            gcode_move(step, 0, false, true);
             break;
         case B_DOWN:
-            gcode_move(-step,0,false,true);
+            gcode_move(-step, 0, false, true);
             break;
         case B_LEFT:
-            gcode_move(0,step,false,true);
+            gcode_move(0, step, false, true);
             break;
         case B_RIGHT:
-            gcode_move(0,-step,false,true);
-            break;
-        case B_CUT:
-            nullMode(false);    
+            gcode_move(0, -step, false, true);
             break;
         case LOAD_PAPER:
             stepper_load_paper();
@@ -97,16 +109,48 @@ void poll_keypad(void) {
             stepper_unload_paper();
             break;
         case B_MM:
-            step=1;
+            step = 1;
             break;
         case B_CM:
-            step=10;
+            step = 10;
             break;
         case B_CENTER:
-            
+
             break;
         case B_ZERO:
 
+            break;
+            
+        case 0x00:speed = 0;
+            updateStatusLeds();
+            break;
+        case 0x10:speed = 1;
+            updateStatusLeds();
+            break;
+        case 0x20:speed = 2;
+            updateStatusLeds();
+            break;
+        case 0x30:speed = 3;
+            updateStatusLeds();
+            break;
+        case 0x40:speed = 4;
+            updateStatusLeds();
+            break;
+
+        case 0x01:press = 0;
+            updateStatusLeds();
+            break;
+        case 0x11:press = 1;
+            updateStatusLeds();
+            break;
+        case 0x21:press = 2;
+            updateStatusLeds();
+            break;
+        case 0x31:press = 3;
+            updateStatusLeds();
+            break;
+        case 0x41:press = 4;
+            updateStatusLeds();
             break;
 
         default:
@@ -114,14 +158,13 @@ void poll_keypad(void) {
     }
 }
 
-
 int main(void) {
     wdt_enable(WDTO_30MS);
     usb_init();
     timer_init();
     stepper_init();
     sei();
-    keypad_init( );
+    keypad_init();
     dial_init();
 
     wdt_reset();
@@ -133,38 +176,21 @@ int main(void) {
 
     // connect stdout to USB port
     stdout = &usb;
+    printf("start\n");
+    updateStatusLeds();    
+
     while (1) {
         wdt_reset();
-        
+
         gcode_loop();
 
         if (flag_25Hz) {
             flag_25Hz = 0;
-            poll_keypad( );
-            dial_poll();
-
+            poll_keypad();
         }
 
         if (flag_Hz) {
             flag_Hz = 0;
-
-            printf("start\n");
-
-
-            speed = dial_get_speed();
-            press = dial_get_pressure();
-            if (speed != lastSpeed) {
-                stepper_speed(speed);
-                lastSpeed = speed;
-                printf("speed %i\n",speed);
-            }
-            if (press != lastPress) {
-                stepper_pressure(press);
-                lastPress = press;
-                printf("pressure %i\n",speed);
-            }
-
         }
     }
 }
-        

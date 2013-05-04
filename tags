@@ -8,12 +8,16 @@ AT_CAR	flash.c	53;"	d	file:
 AT_STATUS	flash.c	52;"	d	file:
 BACKLIGHT	lcd.c	55;"	d	file:
 BUFLEN	cli.c	40;"	d	file:
-BUFSIZE	gcode.c	17;"	d	file:
+BUFSIZE	gcode.c	18;"	d	file:
+B_CENTER	main.c	57;"	d	file:
+B_CM	main.c	56;"	d	file:
 B_CUT	main.c	50;"	d	file:
 B_DOWN	main.c	52;"	d	file:
 B_LEFT	main.c	53;"	d	file:
+B_MM	main.c	55;"	d	file:
 B_RIGHT	main.c	54;"	d	file:
 B_UP	main.c	51;"	d	file:
+B_ZERO	main.c	58;"	d	file:
 CLK	keypad.c	78;"	d	file:
 CMD_QUEUE_SIZE	stepper.c	162;"	d	file:
 CS	flash.c	41;"	d	file:
@@ -36,8 +40,8 @@ DIALS_H	dial.h	24;"	d
 DIAL_PRESSURE	dial.h	/^    DIAL_PRESSURE,$/;"	e	enum:__anon2
 DIAL_SIZE	dial.h	/^    DIAL_SIZE,$/;"	e	enum:__anon2
 DIAL_SPEED	dial.h	/^    DIAL_SPEED,$/;"	e	enum:__anon2
-DPI_X	gcode.c	18;"	d	file:
-DPI_Y	gcode.c	19;"	d	file:
+DPI_X	gcode.c	19;"	d	file:
+DPI_Y	gcode.c	20;"	d	file:
 DRAW	stepper.c	/^    DRAW,			\/\/ move with pen down$/;"	e	enum:type	file:
 E	lcd.c	58;"	d	file:
 F0	stepper.c	64;"	d	file:
@@ -61,7 +65,7 @@ LINE	stepper.c	/^    LINE			\/\/ draw straight line$/;"	e	enum:state	file:
 LOAD_PAPER	main.c	47;"	d	file:
 MAT_EDGE	stepper.c	52;"	d	file:
 MAX_ARGS	cli.c	41;"	d	file:
-MAX_CMD_SIZE	gcode.c	16;"	d	file:
+MAX_CMD_SIZE	gcode.c	17;"	d	file:
 MAX_COLS	keypad.c	81;"	d	file:
 MAX_DIALS	dial.h	/^    MAX_DIALS$/;"	e	enum:__anon2
 MAX_KEYWORDS	cli.c	91;"	d	file:
@@ -101,6 +105,7 @@ beeper_off	timer.c	/^void beeper_off( void )$/;"	f
 beeper_on	timer.c	/^void beeper_on( int Hz )$/;"	f
 bezier_eval	cli.c	/^static int bezier_eval( int *p, float t )$/;"	f	file:
 bezier_prep	cli.c	/^static void bezier_prep( int *k, int *p )$/;"	f	file:
+blink	gcode.c	/^void blink(void) {$/;"	f
 bresenham	stepper.c	/^static struct bresenham$/;"	s	file:
 bresenham_init	stepper.c	/^static void bresenham_init( int x1, int y1 )$/;"	f	file:
 bresenham_step	stepper.c	/^static void bresenham_step( void )$/;"	f	file:
@@ -124,7 +129,7 @@ cmd_queue	stepper.c	/^} cmd_queue[CMD_QUEUE_SIZE];$/;"	v	typeref:struct:cmd
 cmd_tail	stepper.c	/^static volatile uint8_t cmd_head, cmd_tail;$/;"	v	file:
 cmdbuffer	gcode.c	/^char cmdbuffer[BUFSIZE][MAX_CMD_SIZE];$/;"	v
 code_seen	gcode.c	/^bool code_seen(char code) {$/;"	f
-code_value	gcode.c	/^float code_value(void) {$/;"	f
+code_value	gcode.c	/^double code_value(void) {$/;"	f
 code_value_long	gcode.c	/^long code_value_long(void) {$/;"	f
 comment_mode	gcode.c	/^bool comment_mode = false;$/;"	v
 count_25Hz	timer.c	/^static uint8_t count_25Hz = 10;$/;"	v	file:
@@ -169,12 +174,13 @@ flash_write_cmd	flash.c	/^static void flash_write_cmd( uint8_t cmd, uint32_t add
 gcode_LastN	gcode.c	/^long gcode_N, gcode_LastN;$/;"	v
 gcode_N	gcode.c	/^long gcode_N, gcode_LastN;$/;"	v
 gcode_loop	gcode.c	/^void gcode_loop(void) {$/;"	f
+gcode_move	gcode.c	/^void gcode_move(double x, double y, bool down, bool rel) {$/;"	f
 get_cmd	stepper.c	/^static struct cmd *get_cmd( void )$/;"	f	file:
 get_command	gcode.c	/^void get_command() {$/;"	f
 get_miso	flash.c	50;"	d	file:
 get_rows	keypad.c	90;"	d	file:
 get_token	cli.c	/^static uint8_t get_token( void )$/;"	f	file:
-hpgl_mode	gcode.c	/^bool hpgl_mode = false;$/;"	v
+keypad_get_leds	keypad.c	/^uint16_t keypad_get_leds(void) {$/;"	f
 keypad_init	keypad.c	/^void keypad_init( void )$/;"	f
 keypad_prev	keypad.c	/^uint8_t keypad_prev[MAX_COLS];  \/\/ previous state$/;"	v
 keypad_scan	keypad.c	/^int keypad_scan( void )$/;"	f
@@ -183,6 +189,8 @@ keypad_state	keypad.c	/^uint8_t keypad_state[MAX_COLS];	\/\/ current state$/;"	v
 keypad_stop_pressed	keypad.c	/^char keypad_stop_pressed( void )$/;"	f
 keypad_write_cols	keypad.c	/^static void keypad_write_cols( short val )$/;"	f	file:
 keyword	cli.c	/^static const struct keyword$/;"	s	file:
+lastPress	main.c	/^int press = 0, lastPress = -1;$/;"	v
+lastSpeed	main.c	/^int speed = 0, lastSpeed = -1;$/;"	v
 lcd	lcd.c	/^FILE lcd = FDEV_SETUP_STREAM( lcd_putchar, 0, _FDEV_SETUP_WRITE );$/;"	v
 lcd_backlight_off	lcd.c	/^void lcd_backlight_off( void )$/;"	f
 lcd_backlight_on	lcd.c	/^void lcd_backlight_on( void )$/;"	f
@@ -202,8 +210,6 @@ lex	cli.c	/^    char *lex;$/;"	m	struct:token	file:
 main	main.c	/^int main(void) {$/;"	f
 mosi_high	flash.c	47;"	d	file:
 mosi_low	flash.c	46;"	d	file:
-moveHead	gcode.c	/^void moveHead(int x, int y) {$/;"	f
-movePen	gcode.c	/^void movePen(int x, int y) {$/;"	f
 msleep	timer.c	/^void msleep( unsigned msecs )$/;"	f
 nullMode	gcode.c	/^void nullMode(bool b) {$/;"	f
 null_mode	gcode.c	/^bool null_mode = false;$/;"	v
@@ -223,9 +229,10 @@ pen_up	stepper.c	/^static void pen_up( void )$/;"	f	file:
 penup	gcode.c	/^bool penup = true;$/;"	v
 phase	stepper.c	/^static uint8_t phase[] = $/;"	v	file:
 poll_keypad	main.c	/^void poll_keypad(void) {$/;"	f
+press	main.c	/^int press = 0, lastPress = -1;$/;"	v
 pressure	stepper.c	/^static int pressure = 1023;$/;"	v	file:
 process_commands	gcode.c	/^void process_commands() {$/;"	f
-relative_mode	gcode.c	/^bool relative_mode = true;$/;"	v
+relative_mode	gcode.c	/^bool relative_mode = false;$/;"	v
 rs_h	lcd.c	67;"	d	file:
 rs_l	lcd.c	68;"	d	file:
 rw_h	lcd.c	61;"	d	file:
@@ -234,10 +241,12 @@ sck_high	flash.c	49;"	d	file:
 sck_low	flash.c	48;"	d	file:
 serial_char	gcode.c	/^char serial_char;$/;"	v
 serial_count	gcode.c	/^int serial_count = 0;$/;"	v
+speed	main.c	/^int speed = 0, lastSpeed = -1;$/;"	v
 split_line	cli.c	/^static char split_line( char *line, char **argv )$/;"	f	file:
 state	stepper.c	/^static enum state$/;"	g	file:
 state	stepper.c	/^} state;$/;"	v	typeref:enum:state	file:
 steep	stepper.c	/^    char steep;			\/\/ y > x$/;"	m	struct:bresenham	file:
+step	main.c	/^int step = 10;$/;"	v
 step	stepper.c	/^    int step;			\/\/ current step$/;"	m	struct:bresenham	file:
 stepper_draw	stepper.c	/^void stepper_draw( int x, int y )$/;"	f
 stepper_get_pos	stepper.c	/^void stepper_get_pos( int *px, int *py )$/;"	f
@@ -252,7 +261,7 @@ stepper_tick	stepper.c	/^void stepper_tick( void )$/;"	f
 stepper_unload_paper	stepper.c	/^void stepper_unload_paper( void )$/;"	f
 steps	stepper.c	/^    int steps;			\/\/ number of steps in main direction$/;"	m	struct:bresenham	file:
 str	cli.c	/^    char str[10];$/;"	m	struct:keyword	file:
-strchr_pointer	gcode.c	/^char *strchr_pointer; \/\/ just a pointer to find chars in the cmd string like X, Y, Z, E, etc$/;"	v
+strchr_pointer	gcode.c	/^char *strchr_pointer;$/;"	v
 timer_init	timer.c	/^void timer_init( void )$/;"	f
 timer_set_pen_pressure	timer.c	/^void timer_set_pen_pressure( int pressure )$/;"	f
 timer_set_stepper_speed	timer.c	/^void timer_set_stepper_speed( int delay )$/;"	f
@@ -260,6 +269,7 @@ token	cli.c	/^static struct token$/;"	s	file:
 token	cli.c	/^} token;$/;"	v	typeref:struct:token	file:
 type	stepper.c	/^    enum type type;		\/\/ command type,$/;"	m	struct:cmd	typeref:enum:cmd::type	file:
 type	stepper.c	/^enum type$/;"	g	file:
+updateStatusLeds	main.c	/^void updateStatusLeds(void) {$/;"	f
 usb	main.c	/^static FILE usb = FDEV_SETUP_STREAM(usb_putchar, usb_getchar, _FDEV_SETUP_RW);$/;"	v	file:
 usb_getchar	usb.c	/^int usb_getchar( FILE *stream )$/;"	f
 usb_init	usb.c	/^void usb_init( void ) $/;"	f
@@ -277,9 +287,9 @@ val	cli.c	/^    long val;$/;"	m	struct:token	file:
 version	cli.c	/^void version( void )$/;"	f
 x	stepper.c	/^    int x, y; 			\/\/ target coordinates$/;"	m	struct:cmd	file:
 x	stepper.c	/^static int x = -MAT_EDGE, y = 2400; $/;"	v	file:
-xoff	gcode.c	/^int xoff=0;$/;"	v
-xpos	gcode.c	/^int xpos=0;$/;"	v
+xoff	gcode.c	/^double xoff = 0;$/;"	v
+xpos	gcode.c	/^double xpos = 0;$/;"	v
 y	stepper.c	/^    int x, y; 			\/\/ target coordinates$/;"	m	struct:cmd	file:
 y	stepper.c	/^static int x = -MAT_EDGE, y = 2400; $/;"	v	file:
-yoff	gcode.c	/^int yoff=0;$/;"	v
-ypos	gcode.c	/^int ypos=0;$/;"	v
+yoff	gcode.c	/^double yoff = 0;$/;"	v
+ypos	gcode.c	/^double ypos = 0;$/;"	v

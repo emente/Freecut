@@ -1,4 +1,4 @@
-Freecut v0.1g
+Freecut v0.1g (=forked firmware that eats GCode and HPGL)
 
 Free firmware replacement for Cricut(tm) Personal paper cutter.
 
@@ -88,7 +88,7 @@ Top view of Atmega128:
 And upload the freecut.hex file.
 
 After reprogramming, the machine should beep. Use keypad to load/unload paper.
-Use the USB cable to communicate (speed and pressure dial work).
+Use the USB cable to communicate. Speed and pressure dials are not working.
 USB uses 115200 baud, 8N1.
 
 Keypad key functions:
@@ -97,20 +97,21 @@ up/down/left/right: move paper or head
 cut: computer control only (default)
 stop: manual control only 
 
-[7|_|_|_|_|_|_|_|_|_|_|_|5|6] 
-[8|_|_|_|_|_|_|_|_|_|_|_|_|_]     ()
+ S P
+[L|L|_|_|_|_|_|_|_|_|_|_|5|6] 
+[_|_|_|_|_|_|_|_|_|_|_|_|_|_]     ()
 [_|_|_|_|_|_|_|_|_|_|_|_|_|_]   ()
 [_|_|_|_|_|_|_|_|_|_|_|_|4|3]
-[_|_|_|_|_|_|_|_|_|_|_|_|1|2]
+[H|H|_|_|_|_|_|_|_|_|_|_|1|2]
 
+S=Speed (top=low, bottom=high)
+P=Pressure (top=low, bottom=high)
 1=load mat
 2=unload mat
 3=set as 0/0 coordinates
 4=center x
-5=move in millimeters
-6=move in centimeters
-7=led: manual only
-8=led: usb only
+5=arrow keys move in millimeters
+6=arrow keys move in centimeters
 
 Following gcodes are available:
 
