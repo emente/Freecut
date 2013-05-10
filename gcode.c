@@ -58,6 +58,10 @@ void enquecommand(const char *cmd) {
     }
 }
 
+void hgpl_ack() {
+	printf("OK\n");
+}
+
 void get_command() {
     while (1) {
         int foo = usb_peek();
@@ -150,50 +154,41 @@ void get_command() {
                 if (serial_count == 2 &&
                         cmdbuffer[bufindw][0] == 'I' &&
                         cmdbuffer[bufindw][1] == 'N') {
+					hgpl_ack();
                     skipmode = true;
-                    printf("HPGL INIT\n");
                 }
                 else if (serial_count == 3 &&
                         cmdbuffer[bufindw][0] == 'S' &&
                         cmdbuffer[bufindw][1] == 'P' &&
                         cmdbuffer[bufindw][2] == '1') {
+					hgpl_ack();
                     skipmode = true;
-                    printf("HPGL PEN1\n");
                 }
                 else if (serial_count >= 2 &&
                         cmdbuffer[bufindw][0] == 'P' &&
                         (cmdbuffer[bufindw][1] == 'U' ||
                         cmdbuffer[bufindw][1] == 'D')) {
                     if (serial_count > 2) {
-                        printf("plot\n");
                         cmdbuffer[bufindw][serial_count] = '\0';
                         strchr_pointer = strchr(cmdbuffer[bufindw], ',');
                         if (strchr_pointer != NULL) {
-                            printf("coords\n");
                             int y = atoi(strchr_pointer + 1);
                             *strchr_pointer = '\0';
                             int x = atoi(&cmdbuffer[bufindw][2]);
-                            printf("coords %d %d\n", x, y);
-                            while (stepper_queued() > 0) {
-                                wdt_reset();
-                            }
                             if (cmdbuffer[bufindw][1] == 'U') {
                                 stepper_move(x, y);
                             } else {
                                 stepper_draw(x, y);
                             }
-                            printf("done\n");
+							hgpl_ack();
                         }
                     } else {
-                        printf("no params\n");
                         if (cmdbuffer[bufindw][1] == 'U') {
-                            while (stepper_queued() > 0) {
-                                wdt_reset();
-                            }
                             stepper_move(0, 0);
                             beeper_on(1360);
                             msleep(30);
                             beeper_off();
+							hgpl_ack();
                         }
                     }
                     skipmode = true;
